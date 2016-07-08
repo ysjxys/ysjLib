@@ -13,10 +13,10 @@
 @end
 @implementation YSJWebService
 
-+ (void)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle{
++ (NSURLSessionDataTask *)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle{
     MBProgressHUD *hud;
     if (!target) {
-        return;
+        return nil;
     }else{
         hud = [[MBProgressHUD alloc]initWithView:[(UIViewController *)target view]];
         [[(UIViewController *)target view] addSubview:hud];
@@ -27,7 +27,7 @@
     if (!reachabiltiy.isReachable) {
         [hud removeFromSuperview];
         [self showHudWithTarget:target title:@"网络连接不可用"];
-        return;
+        return nil;
     }
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -37,9 +37,9 @@
     
     //输入拼装后的url
     [self printUrlInfo:params withUrl:urlStr];
-    
+    NSURLSessionDataTask *dataTask;
     if (isPost) {
-        [manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+        dataTask = [manager POST:urlStr parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
             //获取到目前的数据请求的进度
             NSLog(@"%lld", uploadProgress.totalUnitCount);
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -57,7 +57,7 @@
             }
         }];
     }else{
-        [manager GET:urlStr parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+        dataTask = [manager GET:urlStr parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
             //获取到目前的数据请求的进度
             NSLog(@"%lld", downloadProgress.totalUnitCount);
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -75,6 +75,7 @@
             }
         }];
     }
+    return dataTask;
 }
 
 /**

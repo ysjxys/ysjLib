@@ -18,6 +18,6 @@ typedef void (^FailHandle)(NSURLSessionTask *operation, NSError *error);
 @interface YSJWebService : NSObject
 
 
-+ (void)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle;
++ (NSURLSessionDataTask *)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle;
 
 @end
