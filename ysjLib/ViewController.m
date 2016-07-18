@@ -85,6 +85,7 @@
     NSLog(@"%@",textLabel.font);
     
 //    [self testWebService];
+//    [self testDownloadWebService];
 //    [self testFMDB];
 //    [self testArrSort];
 //    [self testDicSort];
@@ -109,6 +110,9 @@
     childView.backgroundColor = [UIColor purpleColor];
     _childView = childView;
     [self.view addSubview:childView];
+    
+//    WeakSelf(self);
+//    [weakself testFMDB];
 }
 
 - (void)testDicSort{
@@ -222,6 +226,26 @@
     } fail:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"%@",error);
     }];
+}
+
+- (void)testDownloadWebService{
+    NSLog(@"%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0]);
+    NSString *urlStr = @"http://mw5.dwstatic.com/2/4/1529/134981-99-1436844583.mp4";
+    NSURLSessionDownloadTask *task = [YSJWebService requestDownloadTarget:self withUrl:urlStr progress:^(NSProgress *downloadProgress) {
+        NSLog(@"%f",1.0 * downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
+        // 回到主队列刷新UI
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // 设置进度条的百分比
+//            self.progressView.progress = 1.0 * downloadProgress.completedUnitCount / downloadProgress.totalUnitCount;
+        });
+    } destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSString *pathStr = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES) objectAtIndex:0] stringByAppendingPathComponent:response.suggestedFilename];
+        return [NSURL fileURLWithPath:pathStr];
+    } complete:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        NSLog(@"%@",filePath);
+        NSLog(@"------------      download complete!      ------------");
+    }];
+    [task resume];
 }
 
 - (void)initNav{

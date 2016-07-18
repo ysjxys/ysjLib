@@ -13,6 +13,36 @@
 @interface NSString (YSJ)
 
 /**
+ *  获得文件路径size大小以longlong形式展现
+ */
+- (unsigned long long)fileSizeLongLong;
+
+/**
+ *  获得文件路径size大小以string形式展现
+ */
+- (NSString *)fileSizeString;
+
+/**
+ *  获得Library路径
+ */
++ (NSString *)stringWithLibrary;
+
+/**
+ *  获得Cache路径
+ */
++ (NSString *)stringWithCacheDir;
+
+/**
+ *  获得Document路径
+ */
++ (NSString *)stringWithDocumentDir;
+
+/**
+ *  获得Temp路径
+ */
++ (NSString *)stringWithTempDir;
+
+/**
  *  输入formatterStr，返回对应格式转化后的NSDate
  */
 - (NSDate *)stringToDateWithFormatterStr:(NSString *)formatterStr;

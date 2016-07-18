@@ -11,6 +11,60 @@
 
 @implementation NSString (YSJ)
 
+/**
+ *  获得文件路径size大小以longlong形式展现
+ */
+- (unsigned long long)fileSizeLongLong{
+    NSFileManager *manager = [NSFileManager defaultManager];
+    
+    NSDictionary *attributeDic = [manager attributesOfItemAtPath:self error:nil];
+    NSString *fileType = attributeDic.fileType;
+    if ([fileType isEqualToString:NSFileTypeDirectory]) {
+        NSDirectoryEnumerator *enumerator = [manager enumeratorAtPath:self];
+        unsigned long long fileSize = 0;
+        for (NSString *filePath in enumerator) {
+            NSString *fullPath = [self stringByAppendingPathComponent:filePath];
+            fileSize += [manager attributesOfItemAtPath:fullPath error:nil].fileSize;
+        }
+        return fileSize;
+    }
+    return attributeDic.fileSize;
+}
+/**
+ *  获得文件路径size大小以string形式展现
+ */
+- (NSString *)fileSizeString{
+    unsigned long long fileSize = [self fileSizeLongLong];
+    return [NSByteCountFormatter stringFromByteCount:fileSize countStyle:NSByteCountFormatterCountStyleFile];
+}
+
+/**
+ *  获得Library路径
+ */
++ (NSString *)stringWithLibrary{
+    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+/**
+ *  获得Cache路径
+ */
++ (NSString *)stringWithCacheDir{
+    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+/**
+ *  获得Document路径
+ */
++ (NSString *)stringWithDocumentDir{
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+/**
+ *  获得Temp路径
+ */
++ (NSString *)stringWithTempDir{
+    return NSTemporaryDirectory();
+}
 
 /**
  *  输入formatterStr，返回对应格式转化后的NSDate

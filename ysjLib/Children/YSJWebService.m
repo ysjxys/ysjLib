@@ -8,11 +8,19 @@
 
 #import "YSJWebService.h"
 #import "AFNetworking.h"
+
+#define NetIsNotConnected @"网络连接不可用"
+#define UsingMobileNet @"正在使用移动网络"
+
+
 @interface YSJWebService()
 
 @end
 @implementation YSJWebService
 
+/**
+ *  POST/GET 一般网络请求
+ */
 + (NSURLSessionDataTask *)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle{
     MBProgressHUD *hud;
     if (!target) {
@@ -25,8 +33,12 @@
     
     Reachability *reachabiltiy = [Reachability reachabilityWithHostname:@"www.baidu.com"];
     if (!reachabiltiy.isReachable) {
+        
+//        NotReachable = 0,
+//        ReachableViaWiFi = 2,
+//        ReachableViaWWAN = 1
         [hud removeFromSuperview];
-        [self showHudWithTarget:target title:@"网络连接不可用"];
+        [self showHudWithTarget:target title:NetIsNotConnected];
         return nil;
     }
     
@@ -76,6 +88,55 @@
         }];
     }
     return dataTask;
+}
+
+/**
+ *  下载请求
+ */
++ (NSURLSessionDownloadTask *)requestDownloadTarget:(id)target withUrl:(NSString *)urlStr progress:(ProgressHandle)progress destination:(DestinationHandle)destination complete:(CompletionHandle)complete{
+    
+    //网络监控句柄
+    AFNetworkReachabilityManager *reachabiltiy = [AFNetworkReachabilityManager sharedManager];
+    //要监控网络连接状态，必须要先调用单例的startMonitoring方法
+    [reachabiltiy startMonitoring];
+    [reachabiltiy setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+            case AFNetworkReachabilityStatusNotReachable://未连接
+                [self showHudWithTarget:target title:NetIsNotConnected];
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN://3g4g
+                [self showHudWithTarget:target title:UsingMobileNet];
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi://wifi
+                
+                break;
+            default:
+                break;
+        }
+        
+    }];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    AFURLSessionManager *sessionManager = [[AFURLSessionManager alloc]initWithSessionConfiguration:sessionConfiguration];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+    
+    NSURLSessionDownloadTask *downloadTask = [sessionManager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        if (progress) {
+            progress(downloadProgress);
+        }
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        return destination?destination(targetPath, response):nil;
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        if (complete) {
+            complete(response, filePath, error);
+        }
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }];
+    return downloadTask;
 }
 
 /**
