@@ -10,6 +10,10 @@
 
 @implementation YSJNavigationController
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return _statusBarStyle;
+}
+
 /**
  *  设置背景图
  */

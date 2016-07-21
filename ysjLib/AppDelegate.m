@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "ViewController2.h"
+#import "ViewController3.h"
+#import "YSJNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -29,8 +31,12 @@
     UITabBarItem *item2 = [[UITabBarItem alloc]initWithTitle:@"second" image:nil selectedImage:nil];
     nav2.tabBarItem = item2;
     
+    YSJNavigationController *nav3 = [[YSJNavigationController alloc]initWithRootViewController:[[ViewController3 alloc]init]];
+    UITabBarItem *item3 = [[UITabBarItem alloc]initWithTitle:@"scroll" image:nil selectedImage:nil];
+    nav3.tabBarItem = item3;
+    
     UITabBarController *tabbarCtrl = [[UITabBarController alloc]init];
-    tabbarCtrl.viewControllers = @[nav1, nav2];
+    tabbarCtrl.viewControllers = @[nav1, nav2, nav3];
     
     self.window.rootViewController = tabbarCtrl;
     [self.window makeKeyAndVisible];

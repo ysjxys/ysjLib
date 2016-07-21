@@ -12,6 +12,8 @@
 		4A3ACA4F1D050EB800F4170D /* YSJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3ACA4E1D050EB800F4170D /* YSJViewController.m */; };
 		4A3ACA601D0515A100F4170D /* YSJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3ACA5F1D0515A100F4170D /* YSJTabBarController.m */; };
 		4A3ACAD51D0CF56200F4170D /* NSNumber+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3ACAD41D0CF56200F4170D /* NSNumber+YSJ.m */; };
+		4A6486C21D3CCB8F00347641 /* YSJScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6486C11D3CCB8F00347641 /* YSJScrollView.m */; };
+		4A6486C51D3CCBF000347641 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6486C41D3CCBF000347641 /* ViewController3.m */; };
 		4A93AA3D1CEEDA87005CD9AB /* YSJTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A93AA3C1CEEDA87005CD9AB /* YSJTableViewDataSource.m */; };
 		4A93AA401CEEE90F005CD9AB /* YSJWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A93AA3F1CEEE90F005CD9AB /* YSJWebService.m */; };
 		4A93AA451CEF0B0B005CD9AB /* YSJConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A93AA441CEF0B0B005CD9AB /* YSJConfig.m */; };
@@ -66,6 +68,10 @@
 		4A3ACAD31D0CF56200F4170D /* NSNumber+YSJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+YSJ.h"; sourceTree = "<group>"; };
 		4A3ACAD41D0CF56200F4170D /* NSNumber+YSJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+YSJ.m"; sourceTree = "<group>"; };
 		4A432D391C605DB90052CC3D /* YSJ.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJ.pch; sourceTree = "<group>"; };
+		4A6486C01D3CCB8F00347641 /* YSJScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJScrollView.h; sourceTree = "<group>"; };
+		4A6486C11D3CCB8F00347641 /* YSJScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJScrollView.m; sourceTree = "<group>"; };
+		4A6486C31D3CCBF000347641 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		4A6486C41D3CCBF000347641 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		4A93AA3B1CEEDA87005CD9AB /* YSJTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJTableViewDataSource.h; sourceTree = "<group>"; };
 		4A93AA3C1CEEDA87005CD9AB /* YSJTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJTableViewDataSource.m; sourceTree = "<group>"; };
 		4A93AA3E1CEEE90F005CD9AB /* YSJWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJWebService.h; sourceTree = "<group>"; };
@@ -188,6 +194,8 @@
 		4ADAE61D1CE9A1550092998C /* Children */ = {
 			isa = PBXGroup;
 			children = (
+				4A6486C01D3CCB8F00347641 /* YSJScrollView.h */,
+				4A6486C11D3CCB8F00347641 /* YSJScrollView.m */,
 				4ADAE61F1CE9A1940092998C /* YSJAlertView.h */,
 				4ADAE6201CE9A1940092998C /* YSJAlertView.m */,
 				4ADAE6281CEAB7670092998C /* YSJNavigationController.h */,
@@ -238,6 +246,8 @@
 				4AE1096E1C11258800E35E3C /* ViewController.m */,
 				4AE1A39D1D26397200EC8D86 /* ViewController2.h */,
 				4AE1A39E1D26397200EC8D86 /* ViewController2.m */,
+				4A6486C31D3CCBF000347641 /* ViewController3.h */,
+				4A6486C41D3CCBF000347641 /* ViewController3.m */,
 				4AE1A39A1D260D5800EC8D86 /* ChildViewController.h */,
 				4AE1A39B1D260D5800EC8D86 /* ChildViewController.m */,
 				4AE1A3A01D263ABF00EC8D86 /* ChildViewController2.h */,
@@ -479,9 +489,11 @@
 				4A93AA401CEEE90F005CD9AB /* YSJWebService.m in Sources */,
 				4ADAE61C1CE9A1270092998C /* UIView+YSJ.m in Sources */,
 				4AA9F0801D2280E8009C6A36 /* YSJCommonTools.m in Sources */,
+				4A6486C21D3CCB8F00347641 /* YSJScrollView.m in Sources */,
 				4AE1096F1C11258800E35E3C /* ViewController.m in Sources */,
 				4ADAE61B1CE9A1270092998C /* NSString+YSJ.m in Sources */,
 				4A3ACA4F1D050EB800F4170D /* YSJViewController.m in Sources */,
+				4A6486C51D3CCBF000347641 /* ViewController3.m in Sources */,
 				4ADAE61A1CE9A1270092998C /* NSObject+YSJ.m in Sources */,
 				4AE1A3A21D263ABF00EC8D86 /* ChildViewController2.m in Sources */,
 				4ADAE6211CE9A1940092998C /* YSJAlertView.m in Sources */,

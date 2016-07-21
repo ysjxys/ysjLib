@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface YSJNavigationController : UINavigationController
+
+@property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
+
 /**
  *  设置背景图
  */
