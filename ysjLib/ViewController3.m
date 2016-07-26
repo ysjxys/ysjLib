@@ -7,10 +7,9 @@
 //
 
 #import "ViewController3.h"
-#import "YSJScrollView.h"
+#import "YSJScrollRoundView.h"
 
-@interface ViewController3 ()<UIScrollViewDelegate>
-@property (nonatomic, strong) YSJScrollView *scroll;
+@interface ViewController3 ()
 @property (nonatomic, strong) UISegmentedControl *segmentColor;
 @property (nonatomic, strong) UISegmentedControl *segmentHide;
 @property (nonatomic, strong) UISegmentedControl *segmentAnimation;
@@ -20,18 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    NSArray *arr = @[@"0首页-3景点门票.jpg",@"0首页-2旅游攻略.jpg",@"0首页-1杭州风貌.jpg",@"0首页-4杭州住宿.jpg"];
-//    NSArray *arr = @[@"0首页-3景点门票.jpg"];
-    
-    YSJScrollView *sjs = [YSJScrollView scrollViewWithRect:CGRectMake(0, 400, 320, 100) imgsStrArr:arr];
-    [self.view addSubview:sjs];
-    sjs.backgroundColor = [UIColor lightGrayColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    sjs.delegate = self;
-    self.scroll = sjs;
+    NSArray *arr = @[@"0首页-3景点门票.jpg",@"0首页-2旅游攻略.jpg",@"0首页-1杭州风貌.jpg",@"0首页-4杭州住宿.jpg"];
     
+    YSJScrollRoundView *scrllRound = [YSJScrollRoundView viewWithRect:CGRectMake(0, 200, 320, 300) imgsStrArr:arr];
+    [self.view addSubview:scrllRound];
     
     [self initTitleBtnView];
     [self initSegmentView];
@@ -53,19 +45,19 @@
 - (void)initSegmentView{
     CGFloat width = 50;
     UISegmentedControl *segmentColor = [[UISegmentedControl alloc]initWithItems:@[@"White",@"Black"]];
-    segmentColor.frame = CGRectMake((self.view.frame.size.width-width*2)/2, 50, width*2, 40);
+    segmentColor.frame = CGRectMake((self.view.frame.size.width-width*2)/2, 20, width*2, 40);
     [self.view addSubview:segmentColor];
     [segmentColor addTarget:self action:@selector(segmentColorSelected:) forControlEvents:UIControlEventValueChanged];
     self.segmentColor = segmentColor;
     
     UISegmentedControl *segmentHide = [[UISegmentedControl alloc]initWithItems:@[@"Show",@"Hide"]];
-    segmentHide.frame = CGRectMake((self.view.frame.size.width-width*2)/2, 150, width*2, 40);
+    segmentHide.frame = CGRectMake((self.view.frame.size.width-width*2)/2, 80, width*2, 40);
     [self.view addSubview:segmentHide];
     [segmentHide addTarget:self action:@selector(segmentHideSelected:) forControlEvents:UIControlEventValueChanged];
     self.segmentHide = segmentHide;
     
     UISegmentedControl *segmentAnimation = [[UISegmentedControl alloc]initWithItems:@[@"None",@"Fade",@"Slide"]];
-    segmentAnimation.frame = CGRectMake((self.view.frame.size.width-width*3)/2, 250, width*3, 40);
+    segmentAnimation.frame = CGRectMake((self.view.frame.size.width-width*3)/2, 140, width*3, 40);
     [self.view addSubview:segmentAnimation];
     [segmentAnimation addTarget:self action:@selector(segmentAnimationSelected:) forControlEvents:UIControlEventValueChanged];
     self.segmentAnimation = segmentAnimation;
@@ -95,14 +87,6 @@
     }else{
         [self setStatusBarHideAnimation:UIStatusBarAnimationSlide];
     }
-}
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-    [self.scroll scrollEnabled:NO];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self.scroll changePic];
 }
 
 - (void)didReceiveMemoryWarning {

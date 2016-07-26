@@ -11,6 +11,7 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "YSJNavigationController.h"
+#import "YSJLoadingView.h"
 
 @interface AppDelegate ()
 
@@ -39,6 +40,22 @@
     tabbarCtrl.viewControllers = @[nav1, nav2, nav3];
     
     self.window.rootViewController = tabbarCtrl;
+    
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunched"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    }else{
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
+    }
+    // 这里判断是否第一次
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
+        NSArray *imgArr = @[@"闪屏1.png",@"闪屏2.png", @"闪屏3.png",@"闪屏4.png"];
+        YSJLoadingView *loadingView = [[YSJLoadingView alloc]initWithImgArr:imgArr];
+        
+        [self.window.rootViewController.view addSubview:loadingView];
+    }
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
