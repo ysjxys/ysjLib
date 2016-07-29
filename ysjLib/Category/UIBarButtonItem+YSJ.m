@@ -43,14 +43,14 @@
 /**
  *  创建一个指定的UIBarButtonItem 内部封装一个UIButton 根据title设置button标题
  */
-+ (UIBarButtonItem *)itemWithTitle:(NSString *)title color:(UIColor *)color bounds:(CGRect)bound  target:(id)target action:(SEL)action{
++ (UIBarButtonItem *)itemWithTitle:(NSString *)title color:(UIColor *)color textSize:(CGFloat)textSize bounds:(CGRect)bound  target:(id)target action:(SEL)action{
     // 1.创建按钮
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     
     // 2.设置标题及颜色
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitleColor:color forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    btn.titleLabel.font = [UIFont systemFontOfSize:textSize];
     
     // 3.设置按钮的尺寸
     btn.frame = bound;

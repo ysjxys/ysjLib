@@ -23,7 +23,7 @@
 /**
  *  创建一个指定的UIBarButtonItem 内部封装一个UIButton 根据title设置button标题
  */
-+ (UIBarButtonItem *)itemWithTitle:(NSString *)title color:(UIColor *)color bounds:(CGRect)bound  target:(id)target action:(SEL)action;
++ (UIBarButtonItem *)itemWithTitle:(NSString *)title color:(UIColor *)color textSize:(CGFloat)textSize bounds:(CGRect)bound  target:(id)target action:(SEL)action;
 
 
 @end

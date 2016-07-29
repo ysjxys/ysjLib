@@ -16,6 +16,9 @@
 #import "FMDBHelper.h"
 #import "UIView+YSJ.h"
 #import "ChildViewController.h"
+#import "YSJPhotoKindViewController.h"
+#import "YSJNavigationController.h"
+#import <Photos/Photos.h>
 
 @interface ViewController ()<UIAlertViewDelegate>
 @property (nonatomic, strong) YSJAlertView *ysjAlert;
@@ -257,6 +260,19 @@
     UIBarButtonItem *btn2 = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"periphery_icon_food"] edgeInsets:UIEdgeInsetsMake(0, -20, 0, 0) higlightedImage:[UIImage imageNamed:@"periphery_icon_hospital"] target:self action:@selector(barButtonItemClicked)];
     
     self.navigationItem.rightBarButtonItems = @[btn1,btn2];
+    
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTitle:@"photo" color:[UIColor greenColor] textSize:15.0f bounds:CGRectMake(0, 0, 50, 35) target:self action:@selector(photoBtnClicked)];
+}
+
+- (void)photoBtnClicked{
+    YSJPhotoKindViewController *photoVC = [[YSJPhotoKindViewController alloc]initWithOption:^(NSArray *assetArr) {
+        for (PHAsset *asset in assetArr) {
+            NSLog(@"%@",asset.creationDate);
+        }
+    }];
+    YSJNavigationController *nav = [[YSJNavigationController alloc]initWithRootViewController:photoVC];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)barButtonItemClicked{

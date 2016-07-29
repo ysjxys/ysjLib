@@ -55,6 +55,15 @@
     _titleBtnClickOption = option;
 }
 
+/**
+ *  设置下一ViewController返回按钮文本
+ */
+- (void)setBackBtnText:(NSString *)text{
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = text?text:@"";
+    self.navigationItem.backBarButtonItem = backItem;
+}
+
 - (void)titleBtnClicked:(UIButton *)btn{
     _titleBtnClickOption(btn);
 }

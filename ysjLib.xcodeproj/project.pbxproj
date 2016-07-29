@@ -18,6 +18,11 @@
 		4A93AA3D1CEEDA87005CD9AB /* YSJTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A93AA3C1CEEDA87005CD9AB /* YSJTableViewDataSource.m */; };
 		4A93AA401CEEE90F005CD9AB /* YSJWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A93AA3F1CEEE90F005CD9AB /* YSJWebService.m */; };
 		4A93AA451CEF0B0B005CD9AB /* YSJConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A93AA441CEF0B0B005CD9AB /* YSJConfig.m */; };
+		4AA951FA1D4753FB00A84DF1 /* YSJPhotoKindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA951F91D4753FB00A84DF1 /* YSJPhotoKindViewController.m */; };
+		4AA951FC1D48876500A84DF1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA951FB1D48876500A84DF1 /* Photos.framework */; };
+		4AA951FF1D49DD3E00A84DF1 /* YSJPhotoAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA951FE1D49DD3E00A84DF1 /* YSJPhotoAlbumCell.m */; };
+		4AA952031D49F3D900A84DF1 /* YSJPhotoChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA952021D49F3D900A84DF1 /* YSJPhotoChooseViewController.m */; };
+		4AA952061D49FF6000A84DF1 /* YSJPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA952051D49FF6000A84DF1 /* YSJPhotoCell.m */; };
 		4AA9F0801D2280E8009C6A36 /* YSJCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9F07F1D2280E8009C6A36 /* YSJCommonTools.m */; };
 		4ADAE6191CE9A1270092998C /* NSDate+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAE6121CE9A1270092998C /* NSDate+YSJ.m */; };
 		4ADAE61A1CE9A1270092998C /* NSObject+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAE6141CE9A1270092998C /* NSObject+YSJ.m */; };
@@ -73,14 +78,24 @@
 		4A6486C41D3CCBF000347641 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
 		4A85EE061D421B89009B04EC /* YSJLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJLoadingView.h; sourceTree = "<group>"; };
 		4A85EE071D421B89009B04EC /* YSJLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJLoadingView.m; sourceTree = "<group>"; };
-		4A85EE091D42242F009B04EC /* YSJScrollRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJScrollRoundView.h; sourceTree = "<group>"; };
-		4A85EE0A1D42242F009B04EC /* YSJScrollRoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJScrollRoundView.m; sourceTree = "<group>"; };
+		4A85EE091D42242F009B04EC /* YSJScrollRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSJScrollRoundView.h; path = Children/YSJScrollRoundView.h; sourceTree = "<group>"; };
+		4A85EE0A1D42242F009B04EC /* YSJScrollRoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YSJScrollRoundView.m; path = Children/YSJScrollRoundView.m; sourceTree = "<group>"; };
 		4A93AA3B1CEEDA87005CD9AB /* YSJTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJTableViewDataSource.h; sourceTree = "<group>"; };
 		4A93AA3C1CEEDA87005CD9AB /* YSJTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJTableViewDataSource.m; sourceTree = "<group>"; };
 		4A93AA3E1CEEE90F005CD9AB /* YSJWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJWebService.h; sourceTree = "<group>"; };
 		4A93AA3F1CEEE90F005CD9AB /* YSJWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJWebService.m; sourceTree = "<group>"; };
 		4A93AA431CEF0B0B005CD9AB /* YSJConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJConfig.h; sourceTree = "<group>"; };
 		4A93AA441CEF0B0B005CD9AB /* YSJConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJConfig.m; sourceTree = "<group>"; };
+		4AA951F81D4753FB00A84DF1 /* YSJPhotoKindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJPhotoKindViewController.h; sourceTree = "<group>"; };
+		4AA951F91D4753FB00A84DF1 /* YSJPhotoKindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJPhotoKindViewController.m; sourceTree = "<group>"; };
+		4AA951FB1D48876500A84DF1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		4AA951FD1D49DD3E00A84DF1 /* YSJPhotoAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJPhotoAlbumCell.h; sourceTree = "<group>"; };
+		4AA951FE1D49DD3E00A84DF1 /* YSJPhotoAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJPhotoAlbumCell.m; sourceTree = "<group>"; };
+		4AA952011D49F3D900A84DF1 /* YSJPhotoChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJPhotoChooseViewController.h; sourceTree = "<group>"; };
+		4AA952021D49F3D900A84DF1 /* YSJPhotoChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJPhotoChooseViewController.m; sourceTree = "<group>"; };
+		4AA952041D49FF6000A84DF1 /* YSJPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJPhotoCell.h; sourceTree = "<group>"; };
+		4AA952051D49FF6000A84DF1 /* YSJPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJPhotoCell.m; sourceTree = "<group>"; };
+		4AA952071D4A040E00A84DF1 /* YSJPhotoConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSJPhotoConstant.h; sourceTree = "<group>"; };
 		4AA9F07E1D2280E8009C6A36 /* YSJCommonTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJCommonTools.h; sourceTree = "<group>"; };
 		4AA9F07F1D2280E8009C6A36 /* YSJCommonTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJCommonTools.m; sourceTree = "<group>"; };
 		4ADAE6111CE9A1270092998C /* NSDate+YSJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YSJ.h"; sourceTree = "<group>"; };
@@ -131,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA951FC1D48876500A84DF1 /* Photos.framework in Frameworks */,
 				0C404E826F5A0280536340E0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +171,7 @@
 		44FDCA581C7A23EA09FE0753 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AA951FB1D48876500A84DF1 /* Photos.framework */,
 				30E419BAAC107DC47D113677 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -169,10 +186,44 @@
 				4A1242391CF42855004CDADE /* FMDBHelper.m */,
 				4AA9F07E1D2280E8009C6A36 /* YSJCommonTools.h */,
 				4AA9F07F1D2280E8009C6A36 /* YSJCommonTools.m */,
-				4A85EE061D421B89009B04EC /* YSJLoadingView.h */,
-				4A85EE071D421B89009B04EC /* YSJLoadingView.m */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		4AA951F71D47527D00A84DF1 /* Part */ = {
+			isa = PBXGroup;
+			children = (
+				4AA952001D49F10E00A84DF1 /* PhotoChoose */,
+				4A85EE061D421B89009B04EC /* YSJLoadingView.h */,
+				4A85EE071D421B89009B04EC /* YSJLoadingView.m */,
+				4A85EE091D42242F009B04EC /* YSJScrollRoundView.h */,
+				4A85EE0A1D42242F009B04EC /* YSJScrollRoundView.m */,
+			);
+			name = Part;
+			sourceTree = "<group>";
+		};
+		4AA952001D49F10E00A84DF1 /* PhotoChoose */ = {
+			isa = PBXGroup;
+			children = (
+				4AA952071D4A040E00A84DF1 /* YSJPhotoConstant.h */,
+				4AA952081D4A0ACE00A84DF1 /* View */,
+				4AA951F81D4753FB00A84DF1 /* YSJPhotoKindViewController.h */,
+				4AA951F91D4753FB00A84DF1 /* YSJPhotoKindViewController.m */,
+				4AA952011D49F3D900A84DF1 /* YSJPhotoChooseViewController.h */,
+				4AA952021D49F3D900A84DF1 /* YSJPhotoChooseViewController.m */,
+			);
+			name = PhotoChoose;
+			sourceTree = "<group>";
+		};
+		4AA952081D4A0ACE00A84DF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4AA951FD1D49DD3E00A84DF1 /* YSJPhotoAlbumCell.h */,
+				4AA951FE1D49DD3E00A84DF1 /* YSJPhotoAlbumCell.m */,
+				4AA952041D49FF6000A84DF1 /* YSJPhotoCell.h */,
+				4AA952051D49FF6000A84DF1 /* YSJPhotoCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		4ADAE6101CE9A1270092998C /* Category */ = {
@@ -199,8 +250,6 @@
 		4ADAE61D1CE9A1550092998C /* Children */ = {
 			isa = PBXGroup;
 			children = (
-				4A85EE091D42242F009B04EC /* YSJScrollRoundView.h */,
-				4A85EE0A1D42242F009B04EC /* YSJScrollRoundView.m */,
 				4ADAE61F1CE9A1940092998C /* YSJAlertView.h */,
 				4ADAE6201CE9A1940092998C /* YSJAlertView.m */,
 				4ADAE6281CEAB7670092998C /* YSJNavigationController.h */,
@@ -243,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				4A93AA411CEF0AC5005CD9AB /* Other */,
+				4AA951F71D47527D00A84DF1 /* Part */,
 				4ADAE61D1CE9A1550092998C /* Children */,
 				4ADAE6101CE9A1270092998C /* Category */,
 				4AE1096A1C11258800E35E3C /* AppDelegate.h */,
@@ -489,12 +539,15 @@
 				4AE1A39C1D260D5800EC8D86 /* ChildViewController.m in Sources */,
 				4AE1A39F1D26397200EC8D86 /* ViewController2.m in Sources */,
 				4ADAE6241CE9AE6A0092998C /* UIImage+YSJ.m in Sources */,
+				4AA951FA1D4753FB00A84DF1 /* YSJPhotoKindViewController.m in Sources */,
 				4AE109751C11258800E35E3C /* ysjLib.xcdatamodeld in Sources */,
+				4AA951FF1D49DD3E00A84DF1 /* YSJPhotoAlbumCell.m in Sources */,
 				4A3ACAD51D0CF56200F4170D /* NSNumber+YSJ.m in Sources */,
 				4A93AA401CEEE90F005CD9AB /* YSJWebService.m in Sources */,
 				4A85EE081D421B89009B04EC /* YSJLoadingView.m in Sources */,
 				4ADAE61C1CE9A1270092998C /* UIView+YSJ.m in Sources */,
 				4AA9F0801D2280E8009C6A36 /* YSJCommonTools.m in Sources */,
+				4AA952031D49F3D900A84DF1 /* YSJPhotoChooseViewController.m in Sources */,
 				4AE1096F1C11258800E35E3C /* ViewController.m in Sources */,
 				4A85EE0B1D42242F009B04EC /* YSJScrollRoundView.m in Sources */,
 				4ADAE61B1CE9A1270092998C /* NSString+YSJ.m in Sources */,
@@ -510,6 +563,7 @@
 				4A93AA451CEF0B0B005CD9AB /* YSJConfig.m in Sources */,
 				4ADAE62A1CEAB7670092998C /* YSJNavigationController.m in Sources */,
 				4AE109691C11258800E35E3C /* main.m in Sources */,
+				4AA952061D49FF6000A84DF1 /* YSJPhotoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

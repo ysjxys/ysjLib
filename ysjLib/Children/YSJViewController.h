@@ -24,6 +24,10 @@ typedef void (^ClickedOption)(UIButton *btn);
  */
 - (void)navigationItemTitleViewWithButton:(UIButton *)btn option:(ClickedOption)option;
 
+/**
+ *  设置下一ViewController返回按钮文本
+ */
+- (void)setBackBtnText:(NSString *)text;
 
 /**
  *  改变statusBarStyle
