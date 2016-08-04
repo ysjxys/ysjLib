@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
+@class YSJPHAsset;
 
 @interface YSJPhotoCell : UICollectionViewCell
 
-+ (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath dataDic:(NSMutableDictionary *)dataDic;
++ (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath ysjPHAsset:(YSJPHAsset *)ysjAsset;
 
 - (void)changeSelected;
 

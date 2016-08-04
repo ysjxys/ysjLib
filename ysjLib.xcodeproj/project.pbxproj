@@ -23,6 +23,7 @@
 		4AA951FF1D49DD3E00A84DF1 /* YSJPhotoAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA951FE1D49DD3E00A84DF1 /* YSJPhotoAlbumCell.m */; };
 		4AA952031D49F3D900A84DF1 /* YSJPhotoChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA952021D49F3D900A84DF1 /* YSJPhotoChooseViewController.m */; };
 		4AA952061D49FF6000A84DF1 /* YSJPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA952051D49FF6000A84DF1 /* YSJPhotoCell.m */; };
+		4AA9520C1D51DBCA00A84DF1 /* YSJPHAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9520B1D51DBCA00A84DF1 /* YSJPHAsset.m */; };
 		4AA9F0801D2280E8009C6A36 /* YSJCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9F07F1D2280E8009C6A36 /* YSJCommonTools.m */; };
 		4ADAE6191CE9A1270092998C /* NSDate+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAE6121CE9A1270092998C /* NSDate+YSJ.m */; };
 		4ADAE61A1CE9A1270092998C /* NSObject+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAE6141CE9A1270092998C /* NSObject+YSJ.m */; };
@@ -96,6 +97,8 @@
 		4AA952041D49FF6000A84DF1 /* YSJPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJPhotoCell.h; sourceTree = "<group>"; };
 		4AA952051D49FF6000A84DF1 /* YSJPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJPhotoCell.m; sourceTree = "<group>"; };
 		4AA952071D4A040E00A84DF1 /* YSJPhotoConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSJPhotoConstant.h; sourceTree = "<group>"; };
+		4AA9520A1D51DBCA00A84DF1 /* YSJPHAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJPHAsset.h; sourceTree = "<group>"; };
+		4AA9520B1D51DBCA00A84DF1 /* YSJPHAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJPHAsset.m; sourceTree = "<group>"; };
 		4AA9F07E1D2280E8009C6A36 /* YSJCommonTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJCommonTools.h; sourceTree = "<group>"; };
 		4AA9F07F1D2280E8009C6A36 /* YSJCommonTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJCommonTools.m; sourceTree = "<group>"; };
 		4ADAE6111CE9A1270092998C /* NSDate+YSJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YSJ.h"; sourceTree = "<group>"; };
@@ -206,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				4AA952071D4A040E00A84DF1 /* YSJPhotoConstant.h */,
+				4AA952091D51DB8C00A84DF1 /* Model */,
 				4AA952081D4A0ACE00A84DF1 /* View */,
 				4AA951F81D4753FB00A84DF1 /* YSJPhotoKindViewController.h */,
 				4AA951F91D4753FB00A84DF1 /* YSJPhotoKindViewController.m */,
@@ -224,6 +228,15 @@
 				4AA952051D49FF6000A84DF1 /* YSJPhotoCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		4AA952091D51DB8C00A84DF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AA9520A1D51DBCA00A84DF1 /* YSJPHAsset.h */,
+				4AA9520B1D51DBCA00A84DF1 /* YSJPHAsset.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		4ADAE6101CE9A1270092998C /* Category */ = {
@@ -423,6 +436,7 @@
 				TargetAttributes = {
 					4AE109631C11258800E35E3C = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 2EUZ5J663F;
 					};
 					4AE1097F1C11258800E35E3C = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -535,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A12423A1CF42855004CDADE /* FMDBHelper.m in Sources */,
+				4AA9520C1D51DBCA00A84DF1 /* YSJPHAsset.m in Sources */,
 				4ADAE6271CE9B8A50092998C /* UIBarButtonItem+YSJ.m in Sources */,
 				4AE1A39C1D260D5800EC8D86 /* ChildViewController.m in Sources */,
 				4AE1A39F1D26397200EC8D86 /* ViewController2.m in Sources */,
@@ -707,6 +722,7 @@
 			baseConfigurationReference = B3230D5F83D2075D1FAA090B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ysjLib/YSJ.pch";
 				INFOPLIST_FILE = ysjLib/Info.plist;
@@ -722,6 +738,7 @@
 			baseConfigurationReference = EE04E9ADEBCAD5F8A4DEB7D3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ysjLib/YSJ.pch";
 				INFOPLIST_FILE = ysjLib/Info.plist;

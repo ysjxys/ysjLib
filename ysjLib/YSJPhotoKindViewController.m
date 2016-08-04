@@ -17,13 +17,15 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, copy) PicsSelectdOption option;
+@property (nonatomic, assign) ShowType showType;
 
 @end
 
 @implementation YSJPhotoKindViewController
 
-- (instancetype)initWithOption:(PicsSelectdOption)option{
+- (instancetype)initWithShowType:(ShowType)showType Option:(PicsSelectdOption)option{
     if (self = [super init]) {
+        self.showType = showType;
         self.option = option;
     }
     return self;
@@ -98,7 +100,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     PHAssetCollection *assetCollection = self.dataArr[indexPath.row];
-    YSJPhotoChooseViewController *photoVC = [[YSJPhotoChooseViewController alloc]initWithAssetCollection:assetCollection option:self.option];
+    YSJPhotoChooseViewController *photoVC = [[YSJPhotoChooseViewController alloc]initWithAssetCollection:assetCollection showType:self.showType option:self.option];
     [self.navigationController pushViewController:photoVC animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

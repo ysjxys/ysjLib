@@ -25,5 +25,9 @@
  */
 + (UIBarButtonItem *)itemWithTitle:(NSString *)title color:(UIColor *)color textSize:(CGFloat)textSize bounds:(CGRect)bound  target:(id)target action:(SEL)action;
 
+/**
+ *  修改自己创建的导航栏按钮标题
+ */
+- (void)chanegCustomerBarBtnTitle:(NSString *)title;
 
 @end

@@ -7,10 +7,15 @@
 //
 
 #import "YSJViewController.h"
+typedef NS_ENUM(NSInteger, ShowType) {
+    showTypeList = 1,
+    showTypeDetail
+};
+
 typedef void (^PicsSelectdOption)(NSArray *assetArr);
 
 @interface YSJPhotoKindViewController : YSJViewController
 
-- (instancetype)initWithOption:(PicsSelectdOption)option;
+- (instancetype)initWithShowType:(ShowType)showType Option:(PicsSelectdOption)option;
 
 @end

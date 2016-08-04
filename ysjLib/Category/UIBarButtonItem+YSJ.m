@@ -61,4 +61,13 @@
     // 5.返回创建好的item
     return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
+
+/**
+ *  修改自己创建的导航栏按钮标题
+ */
+- (void)chanegCustomerBarBtnTitle:(NSString *)title{
+    UIButton *btn = (UIButton *)self.customView;
+    [btn setTitle:title forState:UIControlStateNormal];
+}
+
 @end

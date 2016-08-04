@@ -19,5 +19,5 @@
 #define PhotoCollectionCellWidth 67.0f
 #define PhotoCollectionCellSectionEdge 10.0f
 
-#define DicKeyAsset @"DicKeyAsset"
-#define DicKeySelected @"DicKeySelected"
+//#define DicKeyAsset @"DicKeyAsset"
+//#define DicKeySelected @"DicKeySelected"

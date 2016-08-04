@@ -8,24 +8,22 @@
 
 #import "YSJPhotoCell.h"
 #import "YSJPhotoConstant.h"
+#import "YSJPHAsset.h"
+
 @interface YSJPhotoCell()
-@property (nonatomic, strong) PHAsset *asset;
-@property (nonatomic, assign) BOOL isSelected;
 @property (nonatomic, strong) UIImageView *photoImgView;
 @property (nonatomic, strong) UIView *coverView;
 @property (nonatomic, strong) UIImageView *arrowImgView;
-@property (nonatomic, strong) NSMutableDictionary *dataDic;
+@property (nonatomic, strong) YSJPHAsset *ysjAsset;
 
 @end
 
 @implementation YSJPhotoCell
 
-+ (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath dataDic:(NSMutableDictionary *)dataDic{
++ (instancetype)cellWithCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath ysjPHAsset:(YSJPHAsset *)ysjAsset{
     YSJPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoCollectionCellIdentifier forIndexPath:indexPath];
     [cell initView];
-    cell.dataDic = dataDic;
-    cell.asset = dataDic[DicKeyAsset];
-    cell.isSelected = [dataDic[DicKeySelected] boolValue];
+    cell.ysjAsset = ysjAsset;
     return cell;
 }
 
@@ -53,27 +51,26 @@
     }
 }
 
-- (void)setAsset:(PHAsset *)asset{
-    _asset = asset;
-    [[PHImageManager defaultManager]requestImageForAsset:asset targetSize:CGSizeMake(self.frame.size.width*2, self.frame.size.width*2) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+- (void)setYsjAsset:(YSJPHAsset *)ysjAsset{
+    _ysjAsset = ysjAsset;
+    [self setIsSelected:ysjAsset.isSelected];
+    [[PHImageManager defaultManager] requestImageForAsset:ysjAsset.phAsset targetSize:CGSizeMake(self.frame.size.width*2, self.frame.size.width*2) contentMode:PHImageContentModeAspectFit options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         _photoImgView.image = result;
     }];
 }
 
 - (void)setIsSelected:(BOOL)isSelected{
-    _isSelected = isSelected;
+    _ysjAsset.isSelected = isSelected;
     if (isSelected) {
         _coverView.hidden = NO;
         _arrowImgView.hidden = NO;
-        [self.dataDic setObject:@1 forKey:DicKeySelected];
     }else{
         _coverView.hidden = YES;
         _arrowImgView.hidden = YES;
-        [self.dataDic setObject:@0 forKey:DicKeySelected];
     }
 }
 
 - (void)changeSelected{
-    [self setIsSelected:!self.isSelected];
+    [self setIsSelected:!self.ysjAsset.isSelected];
 }
 @end

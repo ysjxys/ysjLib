@@ -14,6 +14,6 @@
 
 @interface YSJPhotoChooseViewController : YSJViewController
 
-- (instancetype)initWithAssetCollection:(PHAssetCollection *)assetCollection option:(PicsSelectdOption)option;
+- (instancetype)initWithAssetCollection:(PHAssetCollection *)assetCollection showType:(ShowType)showType option:(PicsSelectdOption)option;
 
 @end

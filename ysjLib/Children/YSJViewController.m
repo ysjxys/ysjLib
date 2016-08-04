@@ -77,8 +77,8 @@
         YSJNavigationController *nav = (YSJNavigationController *)_selfNavigationController;
         nav.statusBarStyle = statusBarStyle;
         [nav setNeedsStatusBarAppearanceUpdate];
+        return;
     }
-    
     _statusBarStyle = statusBarStyle;
     [self setNeedsStatusBarAppearanceUpdate];
 }

@@ -266,7 +266,7 @@
 }
 
 - (void)photoBtnClicked{
-    YSJPhotoKindViewController *photoVC = [[YSJPhotoKindViewController alloc]initWithOption:^(NSArray *assetArr) {
+    YSJPhotoKindViewController *photoVC = [[YSJPhotoKindViewController alloc]initWithShowType:showTypeDetail Option:^(NSArray *assetArr) {
         for (PHAsset *asset in assetArr) {
             NSLog(@"%@",asset.creationDate);
         }
