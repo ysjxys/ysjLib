@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface YSJTabBarController : UITabBarController
-
+@property (nonatomic, assign) UIInterfaceOrientationMask interfaceOrientation;
+@property (nonatomic, assign) BOOL isAutorotate;
 @end

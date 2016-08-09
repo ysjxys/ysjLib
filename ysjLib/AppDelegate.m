@@ -12,6 +12,7 @@
 #import "ViewController3.h"
 #import "YSJNavigationController.h"
 #import "YSJLoadingView.h"
+#import "YSJTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -36,7 +37,8 @@
     UITabBarItem *item3 = [[UITabBarItem alloc]initWithTitle:@"scroll" image:nil selectedImage:nil];
     nav3.tabBarItem = item3;
     
-    UITabBarController *tabbarCtrl = [[UITabBarController alloc]init];
+//    UITabBarController *tabbarCtrl = [[UITabBarController alloc]init];
+    YSJTabBarController *tabbarCtrl = [[YSJTabBarController alloc]init];
     tabbarCtrl.viewControllers = @[nav1, nav2, nav3];
     
     self.window.rootViewController = tabbarCtrl;

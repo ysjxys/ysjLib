@@ -8,6 +8,8 @@
 
 #import "ViewController3.h"
 #import "YSJScrollRoundView.h"
+#import "UIBarButtonItem+YSJ.h"
+#import "ScreenDirectionViewController.h"
 
 @interface ViewController3 ()
 @property (nonatomic, strong) UISegmentedControl *segmentColor;
@@ -21,12 +23,19 @@
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     NSArray *arr = @[@"0首页-3景点门票.jpg",@"0首页-2旅游攻略.jpg",@"0首页-1杭州风貌.jpg",@"0首页-4杭州住宿.jpg"];
+    [self setBackBtnText:@"不转了"];
     
     YSJScrollRoundView *scrllRound = [YSJScrollRoundView viewWithRect:CGRectMake(0, 200, 320, 300) imgsStrArr:arr];
     [self.view addSubview:scrllRound];
     
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"转屏" color:[UIColor blackColor] textSize:16 bounds:CGRectMake(0, 0, 50, 40) target:self action:@selector(rightBarItemClicked)];
+    
     [self initTitleBtnView];
     [self initSegmentView];
+}
+
+- (void)rightBarItemClicked{
+    [self.navigationController pushViewController:[[ScreenDirectionViewController alloc]init] animated:YES];
 }
 
 - (void)initTitleBtnView{

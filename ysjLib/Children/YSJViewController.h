@@ -10,6 +10,7 @@
 typedef void (^ClickedOption)(UIButton *btn);
 @interface YSJViewController : UIViewController
 
+#pragma mark - NavigationBar method
 /**
  *  任意控制器的提示title
  */
@@ -29,6 +30,7 @@ typedef void (^ClickedOption)(UIButton *btn);
  */
 - (void)setBackBtnText:(NSString *)text;
 
+#pragma mark - StatusBar method
 /**
  *  改变statusBarStyle
  */
@@ -44,4 +46,24 @@ typedef void (^ClickedOption)(UIButton *btn);
  */
 - (void)setStatusBarHideAnimation:(UIStatusBarAnimation)statusBarAnimation;
 
+#pragma mark - DeviceOrientation method
+/**
+ *  改变可供旋转的方向
+ */
+- (void)changeInterfaceOrientation:(UIInterfaceOrientationMask)interfaceOrientation;
+
+/**
+ *  设置是否锁定屏幕旋转
+ */
+- (void)changeScreenLockState:(BOOL)isLock;
+
+/**
+ *  强制改变屏幕方向
+ */
+- (void)changeDeviceOrientation:(UIDeviceOrientation)interfaceOrientation;
+
+/**
+ *  根据重力感应改变屏幕方向
+ */
+- (void)changeDeviceOrientationSituable;
 @end

@@ -10,6 +10,7 @@
 #import "MBProgressHUD.h"
 #import "YSJNavigationController.h"
 #import "UIImage+YSJ.h"
+#import "YSJTabBarController.h"
 
 @interface YSJViewController ()
 @property (nonatomic, copy) ClickedOption titleBtnClickOption;
@@ -18,6 +19,9 @@
 @property (nonatomic, assign) UIStatusBarAnimation statusBarAnimation;
 
 @property (nonatomic, strong) UINavigationController *selfNavigationController;
+@property (nonatomic, strong) UITabBarController *selfTabBarController;
+@property (nonatomic, assign) UIInterfaceOrientationMask interfaceOrientation;
+@property (nonatomic, assign) BOOL shouldAutorotate;
 @end
 
 @implementation YSJViewController
@@ -26,6 +30,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     _selfNavigationController = self.navigationController;
+    _selfTabBarController  =self.tabBarController;
 //    YSJNavigationController *nav = (YSJNavigationController *)self.navigationController;
 //    
 //    //设置标题颜色与字体
@@ -46,6 +51,7 @@
 //    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
+#pragma mark - NavigationBar method
 /**
  *  设置标题内容按钮
  */
@@ -68,6 +74,7 @@
     _titleBtnClickOption(btn);
 }
 
+#pragma mark - StatusBar method
 /**
  *  改变statusBarStyle
  */
@@ -113,6 +120,126 @@
     return _statusBarAnimation;
 }
 
+
+//- (void)changeScreenToHorizontal{
+//    //ViewController
+//    _orientationMask = UIInterfaceOrientationMaskLandscape;
+//    
+//    //NavigationController
+//    [_nav setOrientationMask:_orientationMask];
+//    
+//    //TabBarController
+//    [_tabBar setOrientationMask:_orientationMask];
+//    [self changeInterfaceOrientation:UIInterfaceOrientationMaskLandscape];
+//}
+//
+
+#pragma mark - DeviceOrientation method
+//是否允许自动旋转
+- (BOOL)shouldAutorotate{
+    return _shouldAutorotate;
+}
+
+//支持哪些方向的旋转
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_9_0
+- (NSUInteger)supportedInterfaceOrientations
+#else
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+#endif
+{
+    return _interfaceOrientation;
+}
+
+/**
+ *  改变可供旋转的方向
+ */
+- (void)changeInterfaceOrientation:(UIInterfaceOrientationMask)interfaceOrientation{
+    _interfaceOrientation = interfaceOrientation;
+    
+    if ([_selfNavigationController isKindOfClass:[YSJNavigationController class]]) {
+        YSJNavigationController *nav = (YSJNavigationController *)_selfNavigationController;
+        nav.interfaceOrientation = _interfaceOrientation;
+    }
+    
+    if ([_selfTabBarController isKindOfClass:[YSJTabBarController class]]) {
+        YSJTabBarController *tab = (YSJTabBarController *)_selfTabBarController;
+        tab.interfaceOrientation = _interfaceOrientation;
+    }
+    [self changeInterfaceOrientationToDeviceOrientation:interfaceOrientation];
+}
+
+/**
+ *  设置是否锁定屏幕旋转
+ */
+- (void)changeScreenLockState:(BOOL)isLock{
+    _shouldAutorotate = !isLock;
+    
+    if ([_selfNavigationController isKindOfClass:[YSJNavigationController class]]) {
+        YSJNavigationController *nav = (YSJNavigationController *)_selfNavigationController;
+        nav.isAutorotate = _shouldAutorotate;
+    }
+    
+    if ([_selfTabBarController isKindOfClass:[YSJTabBarController class]]) {
+        YSJTabBarController *tab = (YSJTabBarController *)_selfTabBarController;
+        tab.isAutorotate = _shouldAutorotate;
+    }
+}
+
+/**
+ *  强制改变屏幕方向
+ */
+- (void)changeDeviceOrientation:(UIDeviceOrientation)interfaceOrientation{
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:interfaceOrientation] forKey:@"orientation"];
+}
+
+/**
+ *  根据重力感应改变屏幕方向
+ */
+- (void)changeDeviceOrientationSituable{
+    [self changeDeviceOrientation:[UIDevice currentDevice].orientation];
+}
+
+- (void)changeInterfaceOrientationToDeviceOrientation:(UIInterfaceOrientationMask)interfaceOrientation{
+    UIDeviceOrientation deviceOrientation = UIDeviceOrientationPortrait;
+    switch (interfaceOrientation) {
+        case UIInterfaceOrientationMaskPortrait:
+            deviceOrientation = UIDeviceOrientationPortrait;
+            break;
+        case UIInterfaceOrientationMaskLandscapeLeft:
+            deviceOrientation = UIDeviceOrientationLandscapeLeft;
+            break;
+        case UIInterfaceOrientationMaskLandscapeRight:
+            deviceOrientation = UIDeviceOrientationLandscapeRight;
+            break;
+        case UIInterfaceOrientationMaskPortraitUpsideDown:
+            deviceOrientation = UIDeviceOrientationPortraitUpsideDown;
+            break;
+        case UIInterfaceOrientationMaskLandscape:
+            if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight) {
+                deviceOrientation = UIDeviceOrientationLandscapeRight;
+            }else{
+                deviceOrientation = UIDeviceOrientationLandscapeLeft;
+            }
+            break;
+        case UIInterfaceOrientationMaskAll:
+            deviceOrientation = [UIDevice currentDevice].orientation;
+            break;
+        case UIInterfaceOrientationMaskAllButUpsideDown:
+            if ([UIDevice currentDevice].orientation == UIDeviceOrientationPortraitUpsideDown) {
+                deviceOrientation = UIDeviceOrientationPortrait;
+            }else{
+                deviceOrientation = [UIDevice currentDevice].orientation;
+            }
+            break;
+        default:
+            break;
+    }
+    [self changeDeviceOrientation:deviceOrientation];
+}
+
+
+
+#pragma mark - HUD method
 /**
  *  任意控制器的提示title
  */

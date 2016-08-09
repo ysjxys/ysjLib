@@ -11,6 +11,8 @@
 @interface YSJNavigationController : UINavigationController
 
 @property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
+@property (nonatomic, assign) UIInterfaceOrientationMask interfaceOrientation;
+@property (nonatomic, assign) BOOL isAutorotate;
 
 /**
  *  设置背景图

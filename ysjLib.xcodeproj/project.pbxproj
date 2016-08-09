@@ -13,6 +13,8 @@
 		4A3ACA601D0515A100F4170D /* YSJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3ACA5F1D0515A100F4170D /* YSJTabBarController.m */; };
 		4A3ACAD51D0CF56200F4170D /* NSNumber+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3ACAD41D0CF56200F4170D /* NSNumber+YSJ.m */; };
 		4A6486C51D3CCBF000347641 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6486C41D3CCBF000347641 /* ViewController3.m */; };
+		4A69BC181D58798E00572D00 /* TableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A69BC171D58798E00572D00 /* TableViewCellModel.m */; };
+		4A69BC1B1D587A9400572D00 /* ScreenDirectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A69BC1A1D587A9400572D00 /* ScreenDirectionViewController.m */; };
 		4A85EE081D421B89009B04EC /* YSJLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85EE071D421B89009B04EC /* YSJLoadingView.m */; };
 		4A85EE0B1D42242F009B04EC /* YSJScrollRoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85EE0A1D42242F009B04EC /* YSJScrollRoundView.m */; };
 		4A93AA3D1CEEDA87005CD9AB /* YSJTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A93AA3C1CEEDA87005CD9AB /* YSJTableViewDataSource.m */; };
@@ -77,6 +79,10 @@
 		4A432D391C605DB90052CC3D /* YSJ.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJ.pch; sourceTree = "<group>"; };
 		4A6486C31D3CCBF000347641 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		4A6486C41D3CCBF000347641 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		4A69BC161D58798E00572D00 /* TableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellModel.h; sourceTree = "<group>"; };
+		4A69BC171D58798E00572D00 /* TableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellModel.m; sourceTree = "<group>"; };
+		4A69BC191D587A9400572D00 /* ScreenDirectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenDirectionViewController.h; sourceTree = "<group>"; };
+		4A69BC1A1D587A9400572D00 /* ScreenDirectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenDirectionViewController.m; sourceTree = "<group>"; };
 		4A85EE061D421B89009B04EC /* YSJLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJLoadingView.h; sourceTree = "<group>"; };
 		4A85EE071D421B89009B04EC /* YSJLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJLoadingView.m; sourceTree = "<group>"; };
 		4A85EE091D42242F009B04EC /* YSJScrollRoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YSJScrollRoundView.h; path = Children/YSJScrollRoundView.h; sourceTree = "<group>"; };
@@ -316,6 +322,10 @@
 				4AE1A39E1D26397200EC8D86 /* ViewController2.m */,
 				4A6486C31D3CCBF000347641 /* ViewController3.h */,
 				4A6486C41D3CCBF000347641 /* ViewController3.m */,
+				4A69BC191D587A9400572D00 /* ScreenDirectionViewController.h */,
+				4A69BC1A1D587A9400572D00 /* ScreenDirectionViewController.m */,
+				4A69BC161D58798E00572D00 /* TableViewCellModel.h */,
+				4A69BC171D58798E00572D00 /* TableViewCellModel.m */,
 				4AE1A39A1D260D5800EC8D86 /* ChildViewController.h */,
 				4AE1A39B1D260D5800EC8D86 /* ChildViewController.m */,
 				4AE1A3A01D263ABF00EC8D86 /* ChildViewController2.h */,
@@ -551,6 +561,8 @@
 				4A12423A1CF42855004CDADE /* FMDBHelper.m in Sources */,
 				4AA9520C1D51DBCA00A84DF1 /* YSJPHAsset.m in Sources */,
 				4ADAE6271CE9B8A50092998C /* UIBarButtonItem+YSJ.m in Sources */,
+				4A69BC1B1D587A9400572D00 /* ScreenDirectionViewController.m in Sources */,
+				4A69BC181D58798E00572D00 /* TableViewCellModel.m in Sources */,
 				4AE1A39C1D260D5800EC8D86 /* ChildViewController.m in Sources */,
 				4AE1A39F1D26397200EC8D86 /* ViewController2.m in Sources */,
 				4ADAE6241CE9AE6A0092998C /* UIImage+YSJ.m in Sources */,
