@@ -47,6 +47,7 @@
 		4AE1A39C1D260D5800EC8D86 /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1A39B1D260D5800EC8D86 /* ChildViewController.m */; };
 		4AE1A39F1D26397200EC8D86 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1A39E1D26397200EC8D86 /* ViewController2.m */; };
 		4AE1A3A21D263ABF00EC8D86 /* ChildViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1A3A11D263ABF00EC8D86 /* ChildViewController2.m */; };
+		4AE58DAF1D5DBF7B004D3A83 /* NSObject+XWAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE58DAE1D5DBF7B004D3A83 /* NSObject+XWAdd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,8 @@
 		4AE1A39E1D26397200EC8D86 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		4AE1A3A01D263ABF00EC8D86 /* ChildViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildViewController2.h; sourceTree = "<group>"; };
 		4AE1A3A11D263ABF00EC8D86 /* ChildViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildViewController2.m; sourceTree = "<group>"; };
+		4AE58DAD1D5DBF7B004D3A83 /* NSObject+XWAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XWAdd.h"; sourceTree = "<group>"; };
+		4AE58DAE1D5DBF7B004D3A83 /* NSObject+XWAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XWAdd.m"; sourceTree = "<group>"; };
 		B3230D5F83D2075D1FAA090B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EE04E9ADEBCAD5F8A4DEB7D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,6 +251,8 @@
 		4ADAE6101CE9A1270092998C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				4AE58DAD1D5DBF7B004D3A83 /* NSObject+XWAdd.h */,
+				4AE58DAE1D5DBF7B004D3A83 /* NSObject+XWAdd.m */,
 				4ADAE6111CE9A1270092998C /* NSDate+YSJ.h */,
 				4ADAE6121CE9A1270092998C /* NSDate+YSJ.m */,
 				4ADAE6131CE9A1270092998C /* NSObject+YSJ.h */,
@@ -584,6 +589,7 @@
 				4AE1A3A21D263ABF00EC8D86 /* ChildViewController2.m in Sources */,
 				4ADAE6211CE9A1940092998C /* YSJAlertView.m in Sources */,
 				4ADAE6191CE9A1270092998C /* NSDate+YSJ.m in Sources */,
+				4AE58DAF1D5DBF7B004D3A83 /* NSObject+XWAdd.m in Sources */,
 				4AE1096C1C11258800E35E3C /* AppDelegate.m in Sources */,
 				4A93AA3D1CEEDA87005CD9AB /* YSJTableViewDataSource.m in Sources */,
 				4A3ACA601D0515A100F4170D /* YSJTabBarController.m in Sources */,

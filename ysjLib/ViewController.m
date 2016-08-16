@@ -118,6 +118,17 @@
 //    [weakself testFMDB];
 }
 
+- (void)testNet{
+    NSDictionary * dic = @{@"from":@"杭州",
+                           @"to":@"上海",
+                           @"version":@"1.0",
+                           @"date":@"2016-08-20"};
+    
+    [YSJWebService requestTarget:self withUrl:@"http://apis.baidu.com/qunar/qunar_train_service/s2ssearch" isPost:NO parameters:dic headerKey:@"apikey" header:@"0051c1d27cfac89f64bd56f8d7889c82" complete:^(id response) {
+        NSLog(@"%@",response);
+    } fail:nil];
+}
+
 - (void)testDicSort{
     NSDictionary *dic = @{@"Name":@"Lilei",
                           @"Age":@"18",

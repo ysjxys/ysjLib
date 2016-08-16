@@ -29,6 +29,11 @@ typedef void (^CompletionHandle)(NSURLResponse *response, NSURL *filePath, NSErr
 + (NSURLSessionDataTask *)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle;
 
 /**
+ *  POST/GET 带header的网络请求
+ */
++ (NSURLSessionDataTask *)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params headerKey:(NSString *)headerKey header:(NSString *)header complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle;
+
+/**
  *  下载请求
  */
 + (NSURLSessionDownloadTask *)requestDownloadTarget:(id)target withUrl:(NSString *)urlStr progress:(ProgressHandle)progress destination:(DestinationHandle)destination complete:(CompletionHandle)complete;

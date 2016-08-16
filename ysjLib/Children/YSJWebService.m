@@ -19,9 +19,9 @@
 @implementation YSJWebService
 
 /**
- *  POST/GET 一般网络请求
+ *  POST/GET 带header的网络请求
  */
-+ (NSURLSessionDataTask *)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle{
++ (NSURLSessionDataTask *)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params headerKey:(NSString *)headerKey header:(NSString *)header complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle{
     MBProgressHUD *hud;
     if (!target) {
         return nil;
@@ -33,10 +33,9 @@
     
     Reachability *reachabiltiy = [Reachability reachabilityWithHostname:@"www.baidu.com"];
     if (!reachabiltiy.isReachable) {
-        
-//        NotReachable = 0,
-//        ReachableViaWiFi = 2,
-//        ReachableViaWWAN = 1
+        //        NotReachable = 0,
+        //        ReachableViaWiFi = 2,
+        //        ReachableViaWWAN = 1
         [hud removeFromSuperview];
         [self showHudWithTarget:target title:NetIsNotConnected];
         return nil;
@@ -46,7 +45,9 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 15.0f;
-    
+    if (headerKey && header) {
+        [manager.requestSerializer setValue:header forHTTPHeaderField:headerKey];
+    }
     //输入拼装后的url
     [self printUrlInfo:params withUrl:urlStr];
     NSURLSessionDataTask *dataTask;
@@ -88,6 +89,13 @@
         }];
     }
     return dataTask;
+}
+
+/**
+ *  POST/GET 一般网络请求
+ */
++ (NSURLSessionDataTask *)requestTarget:(id)target withUrl:(NSString *)urlStr isPost:(BOOL)isPost parameters:(NSDictionary *)params complete:(CompleteHandle)completeHandle fail:(FailHandle)failHandle{
+    return [self requestTarget:target withUrl:urlStr isPost:isPost parameters:params headerKey:nil header:nil complete:completeHandle fail:failHandle];
 }
 
 /**
