@@ -25,7 +25,9 @@
     NSArray *arr = @[@"0首页-3景点门票.jpg",@"0首页-2旅游攻略.jpg",@"0首页-1杭州风貌.jpg",@"0首页-4杭州住宿.jpg"];
     [self setBackBtnText:@"不转了"];
     
-    YSJScrollRoundView *scrllRound = [YSJScrollRoundView viewWithRect:CGRectMake(0, 200, 320, 300) imgsStrArr:arr];
+    YSJScrollRoundView *scrllRound = [YSJScrollRoundView viewWithRect:CGRectMake(0, 200, 320, 200) imgsStrArr:arr autoRun:YES timeInterval:2.0 imgSelectedHandle:^(NSUInteger index) {
+        NSLog(@"index:%lu",(unsigned long)index);
+    }];
     [self.view addSubview:scrllRound];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"转屏" color:[UIColor blackColor] textSize:16 bounds:CGRectMake(0, 0, 50, 40) target:self action:@selector(rightBarItemClicked)];

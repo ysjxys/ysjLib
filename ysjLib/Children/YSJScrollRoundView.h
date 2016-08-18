@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^ImgSelectedHandle)(NSUInteger index);
+
 @interface YSJScrollRoundView : UIView
+@property (nonatomic, strong) UIPageControl *pageControl;
 
++ (instancetype)viewWithRect:(CGRect)rect imgsStrArr:(NSArray *)imgsStrArr autoRun:(BOOL)autoRun timeInterval:(NSTimeInterval)timeInterval imgSelectedHandle:(ImgSelectedHandle)handle;
 
-+ (instancetype)viewWithRect:(CGRect)rect imgsStrArr:(NSArray *)imgsStrArr;
-+ (instancetype)viewWithRect:(CGRect)rect imgsArr:(NSArray *)imgsArr;
++ (instancetype)viewWithRect:(CGRect)rect imgsArr:(NSArray *)imgsArr autoRun:(BOOL)autoRun timeInterval:(NSTimeInterval)timeInterval imgSelectedHandle:(ImgSelectedHandle)handle;
+
 
 @end

@@ -7,32 +7,38 @@
 //
 
 #import "YSJScrollRoundView.h"
+#import "UIView+YSJ.h"
 
 @interface YSJScrollRoundView()<UIScrollViewDelegate>
 
-@property (nonatomic, strong) NSArray *viewArr;
-@property (nonatomic, strong) NSArray *imgsArr;
+@property (nonatomic, copy) NSArray *imgsArr;
+@property (nonatomic, assign) BOOL autoRun;
 @property (nonatomic, assign) CGFloat frameWidth;
+@property (nonatomic, copy) ImgSelectedHandle handle;
 
+@property (nonatomic, copy) NSArray *viewArr;
+@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIImageView *imgViewLeft;
 @property (nonatomic, strong) UIImageView *imgViewCenter;
 @property (nonatomic, strong) UIImageView *imgViewRight;
 
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, assign) NSTimeInterval timeInterval;
 @end
 
 @implementation YSJScrollRoundView
 
-+ (instancetype)viewWithRect:(CGRect)rect imgsStrArr:(NSArray *)imgsStrArr{
+#pragma mark - init method
++ (instancetype)viewWithRect:(CGRect)rect imgsStrArr:(NSArray *)imgsStrArr autoRun:(BOOL)autoRun timeInterval:(NSTimeInterval)timeInterval imgSelectedHandle:(ImgSelectedHandle)handle{
     NSMutableArray *tempArr = [NSMutableArray array];
     for (int i = 0; i < imgsStrArr.count; i++) {
         UIImage *image = [UIImage imageNamed:imgsStrArr[i]];
         [tempArr addObject:image];
     }
-    return [self viewWithRect:rect imgsArr:tempArr];
+    return [self viewWithRect:rect imgsArr:tempArr autoRun:autoRun timeInterval:timeInterval imgSelectedHandle:handle];
 }
 
-+ (instancetype)viewWithRect:(CGRect)rect imgsArr:(NSArray *)imgsArr{
++ (instancetype)viewWithRect:(CGRect)rect imgsArr:(NSArray *)imgsArr autoRun:(BOOL)autoRun timeInterval:(NSTimeInterval)timeInterval imgSelectedHandle:(ImgSelectedHandle)handle{
     YSJScrollRoundView *view = [[YSJScrollRoundView alloc]initWithFrame:rect];
     view.frameWidth = rect.size.width;
     
@@ -45,18 +51,25 @@
     view.scrollView = scroll;
     [view addSubview:scroll];
     
+    UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, rect.size.height-20, rect.size.width, 20)];
+    pageControl.backgroundColor = [UIColor clearColor];
+    pageControl.numberOfPages = imgsArr.count;
+    pageControl.currentPage = 0;
+    pageControl.tintColor = [UIColor whiteColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor lightGrayColor];
+    [view addSubview:pageControl];
+    
+    view.pageControl = pageControl;
     view.imgsArr = imgsArr;
+    view.handle = handle;
     view.viewArr = [view viewArrInit:rect.size imgsArr:imgsArr];
     
+    if (autoRun) {
+        view.autoRun = autoRun;
+        view.timeInterval = timeInterval;
+        [view addTimer];
+    }
     return view;
-}
-
-- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-    [self scrollEnabled:NO];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self changePic];
 }
 
 - (NSMutableArray *)viewArrInit:(CGSize)size imgsArr:(NSArray *)imgsArr{
@@ -71,11 +84,17 @@
     [self.scrollView addSubview:imgViewLeft];
     self.imgViewLeft = imgViewLeft;
     
+    
     UIImageView *imgViewCenter = [[UIImageView alloc]initWithImage:imgsArr[0]];
     imgViewCenter.frame = CGRectMake(size.width, 0, size.width, size.height);
+    if (self.handle) {
+        imgViewCenter.userInteractionEnabled = YES;
+        [imgViewCenter addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imgViewSelected)]];
+    }
     [viewArr addObject:imgViewCenter];
     [self.scrollView addSubview:imgViewCenter];
     self.imgViewCenter = imgViewCenter;
+    
     
     UIImage *rightImg = imgsArr.count>1?imgsArr[1]:imgsArr[0];
     UIImageView *imgViewRight = [[UIImageView alloc]initWithImage:rightImg];
@@ -85,6 +104,54 @@
     self.imgViewRight = imgViewRight;
     
     return viewArr;
+}
+
+#pragma mark - UITapGestureRecognizer
+- (void)imgViewSelected{
+    UIImage *showImg = self.imgViewCenter.image;
+    NSUInteger showIndex = [self.imgsArr indexOfObject:showImg];
+    self.handle(showIndex);
+}
+
+#pragma mark - scrollView delegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    if (self.autoRun) {
+        [self removeTimer];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if (self.autoRun) {
+        [self addTimer];
+    }
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+    scrollView.scrollEnabled = NO;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    [self changePic];
+}
+
+#pragma mark - Timer
+- (void)addTimer{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.timeInterval target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)removeTimer{
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+#pragma mark - changeMethod
+- (void)nextPage{
+    [self scrollViewWillBeginDecelerating:self.scrollView];
+    [UIView animateWithDuration:0.4 animations:^{
+        self.scrollView.contentOffset = CGPointMake(self.frameWidth*2, 0);
+    }];
+    [self scrollViewDidEndDecelerating:self.scrollView];
 }
 
 - (void)changePic{
@@ -103,6 +170,7 @@
         }else{
             self.imgViewLeft.image = self.imgsArr[showIndex-1];
         }
+        [self changeCurrentPageNumIsAdd:NO];
     }
     if (self.scrollView.contentOffset.x == self.frameWidth*2) {
         UIImage *showImg = self.imgViewRight.image;
@@ -119,11 +187,28 @@
         }else{
             self.imgViewRight.image = self.imgsArr[0];
         }
+        [self changeCurrentPageNumIsAdd:YES];
     }
+    //self.scrollView.contentOffset.x = self.frameWidth  说明并没有滑动，不做处理
     self.scrollView.scrollEnabled = YES;
 }
 
-- (void)scrollEnabled:(BOOL)enable{
-    self.scrollView.scrollEnabled = enable;
+- (void)changeCurrentPageNumIsAdd:(BOOL)isAdd{
+    NSInteger currentPage = self.pageControl.currentPage;
+    if (isAdd) {
+        if (currentPage + 1 >= _imgsArr.count) {
+            currentPage = 0;
+        }else{
+            currentPage = currentPage + 1;
+        }
+    }else{
+        if (currentPage - 1 < 0) {
+            currentPage = _imgsArr.count - 1;
+        }else{
+            currentPage = currentPage - 1;
+        }
+    }
+    self.pageControl.currentPage = currentPage;
 }
+
 @end
