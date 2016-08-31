@@ -24,4 +24,9 @@
  */
 - (void)setNavigationTitleColor:(UIColor *)color font:(UIFont *)font;
 
+/**
+ *  设置TabBarItem
+ */
+- (void)setTabBarItemWithImage:(UIImage *)image SelectedImage:(UIImage *)selectedImage renderingMode:(UIImageRenderingMode)renderingMode title:(NSString *)title titleColor:(UIColor *)titleColor;
+
 @end

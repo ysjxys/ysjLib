@@ -54,4 +54,15 @@
     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:color,                NSFontAttributeName:font};
     //    [UIFont boldSystemFontOfSize:font]
 }
+
+/**
+ *  设置TabBarItem
+ */
+- (void)setTabBarItemWithImage:(UIImage *)image SelectedImage:(UIImage *)selectedImage renderingMode:(UIImageRenderingMode)renderingMode title:(NSString *)title titleColor:(UIColor *)titleColor{
+    image = [image imageWithRenderingMode:renderingMode];
+    selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UITabBarItem *item = [[UITabBarItem alloc]initWithTitle:title image:image selectedImage:selectedImage];
+    [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:titleColor,NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
+    self.tabBarItem = item;
+}
 @end

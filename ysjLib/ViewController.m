@@ -19,6 +19,7 @@
 #import "YSJPhotoKindViewController.h"
 #import "YSJNavigationController.h"
 #import <Photos/Photos.h>
+#import "YSJCommonTools.h"
 
 @interface ViewController ()<UIAlertViewDelegate>
 @property (nonatomic, strong) YSJAlertView *ysjAlert;
@@ -41,6 +42,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    YSJLog(@"%@",[NSString stringWithDocumentDir]);
     [self initNav];
     
     //5.5inch 736*414   4.7inch 667*375     4inch 568*320   3.5inch 480*320
@@ -89,7 +91,7 @@
     
 //    [self testWebService];
 //    [self testDownloadWebService];
-//    [self testFMDB];
+    [self testFMDB];
 //    [self testArrSort];
 //    [self testDicSort];
     self.myBlock = ^(int num, NSString *name){
@@ -183,11 +185,11 @@
     //创建/获得数据库
     [FMDBHelper dataBaseWithName:@"testFMDB.sqlite"];
     //建表
-//    NSDictionary *dic = @{@"id":@"integer PRIMARY KEY AUTOINCREMENT",
-//                          @"name":@"text NOT NULL",
-//                          @"age":@"integer",
-//                          @"sex":@"integer"};
-//    [FMDBHelper createTable:@"testTable" keyTypes:dic];
+    NSDictionary *dic = @{@"id":@"integer PRIMARY KEY AUTOINCREMENT",
+                          @"name":@"text NOT NULL",
+                          @"age":@"integer",
+                          @"sex":@"integer"};
+    [FMDBHelper createTable:@"testTable" withKeyTypeDic:dic];
     
     //插入数据
 //    NSDictionary *insertDic = @{@"name":@"NEX",@"age":@"19",@"sex":@"0"};
@@ -195,18 +197,19 @@
 //    NSDictionary *insertDic2 = @{@"name":@"ASan",@"age":@"16",@"sex":@"0"};
 //    [FMDBHelper insertKeyValues:insertDic2 intoTable:@"testTable"];
     
-    //更新
-//    NSDictionary *updateDic = @{@"name":@"hehe"};
-//    [FMDBHelper updateTable:@"testTable" setKeyValues:updateDic];
-    
     //条件更新
-//    NSDictionary *updateDic = @{@"name":@"hehe"};
-//    NSDictionary *conditionDic = @{@"name":@"ha",@"age":@"121"};
-//    [FMDBHelper updateTable:@"testTable" setKeyValues:updateDic whereCondition:conditionDic];
+//    NSDictionary *updateDic = @{@"age":@20,@"sex":@1};
+//    NSArray *compareKeyArr = @[[FMDBHelper compareKey:CompareKeyEqual],[FMDBHelper compareKey:CompareKeyLike]];
+//    NSArray *columnArr = @[@{@"age":@19},@{@"name":@"%E%"}];
+//    [FMDBHelper updateTable:@"testTable" updateDic:updateDic andOrKey:AndKey compareKeyArr:compareKeyArr columnArr:columnArr];
+    
+    
     
     //条件删除
 //    NSDictionary *deleteDic = @{@"name":@"2hehe",@"age":@"10"};
-//    [FMDBHelper deleteTable:@"testTable" whereCondition:deleteDic];
+    NSArray *compareKeyArr = @[[FMDBHelper compareKey:CompareKeyEqual],[FMDBHelper compareKey:CompareKeyEqual]];
+    NSArray *columnArr = @[@{@"age":@16},@{@"sex":@1}];
+    [FMDBHelper deleteTable:@"testTable" andOrKey:AndKey compareKeyArr:compareKeyArr columnArr:columnArr];
     
     //删除表内全部数据
 //    [FMDBHelper deleteTable:@"testTable"];
@@ -220,8 +223,8 @@
 //    NSLog(@"%@", resultArr);
     
     //全部查询
-    NSArray *resultArr = [FMDBHelper selectDataFromTable:@"testTable"];
-    NSLog(@"%@", resultArr);
+//    NSArray *resultArr = [FMDBHelper selectDataFromTable:@"testTable"];
+//    NSLog(@"%@", resultArr);
 }
 
 - (void)testWebService{

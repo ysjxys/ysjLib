@@ -62,6 +62,14 @@
 }
 
 /**
+ *  设置标题内容、颜色、字体
+ */
+- (void)setTitle:(NSString *)title titleColor:(UIColor *)color titleFont:(UIFont *)font{
+    self.navigationItem.title = title;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:color,                NSFontAttributeName:font};
+}
+
+/**
  *  设置下一ViewController返回按钮文本
  */
 - (void)setBackBtnText:(NSString *)text{

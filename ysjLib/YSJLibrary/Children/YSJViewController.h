@@ -26,6 +26,11 @@ typedef void (^ClickedOption)(UIButton *btn);
 - (void)navigationItemTitleViewWithButton:(UIButton *)btn option:(ClickedOption)option;
 
 /**
+ *  设置标题内容、颜色、字体
+ */
+- (void)setTitle:(NSString *)title titleColor:(UIColor *)color titleFont:(UIFont *)font;
+
+/**
  *  设置下一ViewController返回按钮文本
  */
 - (void)setBackBtnText:(NSString *)text;
