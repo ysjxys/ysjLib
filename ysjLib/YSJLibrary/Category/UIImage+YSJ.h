@@ -31,4 +31,9 @@
  *  @return 截取后的图片
  */
 + (instancetype)captureWithView:(UIView *)view;
+
+/**
+ *  判断图片是否为亮色
+ */
+- (BOOL)isLightColor;
 @end

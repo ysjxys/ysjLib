@@ -94,4 +94,19 @@
 - (NSTimeInterval)compareTimeToAnotherDate:(NSDate *)date{
     return self.timeIntervalSince1970 - date.timeIntervalSince1970;
 }
+
+/**
+ *  返回该日是星期几
+ */
+- (int)weekNumber{
+    int y = [[self dateToStringWithFormatterStr:@"yyyy"] intValue];
+    int m = [[self dateToStringWithFormatterStr:@"MM"] intValue];
+    int d = [[self dateToStringWithFormatterStr:@"dd"] intValue];
+    if (m < 3) {
+        m = m + 12;
+        y = y - 1;
+    }
+    int w = (d+2*m+3*(m+1)/5+y+y/4-y/100+y/400)%7;
+    return w;
+}
 @end

@@ -68,4 +68,9 @@
  */
 - (NSTimeInterval)compareTimeToAnotherDate:(NSDate *)date;
 
+/**
+ *  返回该日是星期几
+ */
+- (int)weekNumber;
+
 @end

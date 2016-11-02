@@ -13,14 +13,14 @@
 /**
  *  创建一个指定的UIBarButtonItem 内部封装一个UIButton，frame为image的frame
  */
-+ (UIBarButtonItem *)itemWithImage:(UIImage *)image edgeInsets:(UIEdgeInsets)edgeInsets higlightedImage:(UIImage *)higlightedImage target:(id)target action:(SEL)action{
-    return [self itemWithImage:image edgeInsets:edgeInsets bounds:CGRectNull higlightedImage:higlightedImage target:target action:action];
++ (UIBarButtonItem *)itemWithImage:(UIImage *)image edgeInsets:(UIEdgeInsets)edgeInsets higlightedImage:(UIImage *)higlightedImage alignment:(UIControlContentHorizontalAlignment)alignment target:(id)target action:(SEL)action{
+    return [self itemWithImage:image edgeInsets:edgeInsets bounds:CGRectNull higlightedImage:higlightedImage alignment:alignment target:target action:action];
 }
 
 /**
  *  创建一个指定的UIBarButtonItem 内部封装一个UIButton
  */
-+ (UIBarButtonItem *)itemWithImage:(UIImage *)image edgeInsets:(UIEdgeInsets)edgeInsets bounds:(CGRect)frame higlightedImage:(UIImage *)higlightedImage target:(id)target action:(SEL)action{
++ (UIBarButtonItem *)itemWithImage:(UIImage *)image edgeInsets:(UIEdgeInsets)edgeInsets bounds:(CGRect)frame higlightedImage:(UIImage *)higlightedImage alignment:(UIControlContentHorizontalAlignment)alignment target:(id)target action:(SEL)action{
     // 1.创建按钮
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -28,6 +28,7 @@
     UIImage *normal = image;
     [btn setImage:normal forState:UIControlStateNormal];
     [btn setImage:higlightedImage forState:UIControlStateHighlighted];
+    btn.contentHorizontalAlignment = alignment;
     
     // 3.设置按钮的尺寸
     [btn setImageEdgeInsets:edgeInsets];
@@ -43,7 +44,7 @@
 /**
  *  创建一个指定的UIBarButtonItem 内部封装一个UIButton 根据title设置button标题
  */
-+ (UIBarButtonItem *)itemWithTitle:(NSString *)title color:(UIColor *)color textSize:(CGFloat)textSize bounds:(CGRect)bound  target:(id)target action:(SEL)action{
++ (UIBarButtonItem *)itemWithTitle:(NSString *)title color:(UIColor *)color textSize:(CGFloat)textSize bounds:(CGRect)bound alignment:(UIControlContentHorizontalAlignment)alignment target:(id)target action:(SEL)action{
     // 1.创建按钮
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -51,6 +52,7 @@
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitleColor:color forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:textSize];
+    btn.contentHorizontalAlignment = alignment;
     
     // 3.设置按钮的尺寸
     btn.frame = bound;

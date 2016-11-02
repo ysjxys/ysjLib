@@ -16,11 +16,12 @@
 
 @interface YSJPhotoChooseViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic, assign) ShowType showType;
+@property (nonatomic, assign) SelectType selectType;
 @property (nonatomic, strong) PHAssetCollection *assetCollection;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 
-@property (nonatomic, copy) PicsSelectdOption option;
+@property (nonatomic, copy) PicsSelectdHandle handle;
 
 @property (nonatomic, strong) UIView *backDetailView;
 @property (nonatomic, strong) UIImageView *imgDetailView;
@@ -30,11 +31,12 @@
 
 @implementation YSJPhotoChooseViewController
 
-- (instancetype)initWithAssetCollection:(PHAssetCollection *)assetCollection showType:(ShowType)showType option:(PicsSelectdOption)option{
+- (instancetype)initWithAssetCollection:(PHAssetCollection *)assetCollection showType:(ShowType)showType selectType:(SelectType)selectType handle:(PicsSelectdHandle)handle{
     if (self = [super init]) {
         self.assetCollection = assetCollection;
-        self.option = option;
+        self.handle = handle;
         self.showType = showType;
+        self.selectType = selectType;
         PHFetchResult *result = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
         
         for (int i = 0; i < result.count; i++) {
@@ -55,7 +57,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = self.assetCollection.localizedTitle;
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"确定" color:self.view.tintColor textSize:RightBarItemTextSize bounds:CGRectMake(0, 0, 50, 35) target:self action:@selector(rightBarBtnClicked)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"确定" color:self.view.tintColor textSize:RightBarItemTextSize bounds:CGRectMake(0, 0, 50, 35) alignment:UIControlContentHorizontalAlignmentRight target:self action:@selector(rightBarBtnClicked)];
     
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
@@ -147,7 +149,7 @@
 }
 
 - (void)sureBtnClicked{
-    NSMutableArray *choosedArr = [NSMutableArray array];
+    NSMutableArray<PHAsset *> *choosedArr = [NSMutableArray array];
     for (YSJPHAsset *ysjAsset in self.dataArr) {
         if (ysjAsset.isSelected) {
             [choosedArr addObject:ysjAsset.phAsset];
@@ -157,14 +159,14 @@
     if (choosedArr.count == 0) {
         return;
     }
-    self.option(choosedArr);
+    self.handle(choosedArr);
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - collection Delegate & DataSource & FlowLayoutDelegate
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-     YSJPhotoCell *cell = [YSJPhotoCell cellWithCollectionView:collectionView indexPath:indexPath ysjPHAsset:self.dataArr[indexPath.row]];
+    YSJPhotoCell *cell = [YSJPhotoCell cellWithCollectionView:collectionView indexPath:indexPath ysjPHAsset:self.dataArr[indexPath.row]];
     return cell;
 }
 
@@ -173,13 +175,16 @@
         //列表展示
         YSJPhotoCell *cell = (YSJPhotoCell *)[collectionView cellForItemAtIndexPath:indexPath];
         [cell changeSelected];
+        if (self.selectType == SelectTypeSingle) {
+            [self sureBtnClicked];
+        }
     }else if (self.showType == showTypeDetail){
         if (!self.isDetailMode) {
             //列表模式
             YSJPhotoCell *cell = (YSJPhotoCell *)[collectionView cellForItemAtIndexPath:indexPath];
             [cell changeSelected];
         }else{
-//            PHAsset *asset = self.dataArr[indexPath.row][DicKeyAsset];
+            //            PHAsset *asset = self.dataArr[indexPath.row][DicKeyAsset];
             YSJPHAsset *ysjAsset = self.dataArr[indexPath.row];
             if (ysjAsset.phAsset.mediaType == PHAssetMediaTypeImage) {
                 [[PHImageManager defaultManager] requestImageForAsset:ysjAsset.phAsset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeDefault options:nil resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {

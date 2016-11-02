@@ -13,17 +13,17 @@
 /**
  *  创建一个指定的UIBarButtonItem 内部封装一个UIButton，frame为image的frame
  */
-+ (UIBarButtonItem *)itemWithImage:(UIImage *)image edgeInsets:(UIEdgeInsets)edgeInsets higlightedImage:(UIImage *)higlightedImage target:(id)target action:(SEL)action;
++ (UIBarButtonItem *)itemWithImage:(UIImage *)image edgeInsets:(UIEdgeInsets)edgeInsets higlightedImage:(UIImage *)higlightedImage alignment:(UIControlContentHorizontalAlignment)alignment target:(id)target action:(SEL)action;
 
 /**
  *  创建一个指定的UIBarButtonItem 内部封装一个UIButton
  */
-+ (UIBarButtonItem *)itemWithImage:(UIImage *)image edgeInsets:(UIEdgeInsets)edgeInsets bounds:(CGRect)frame higlightedImage:(UIImage *)higlightedImage target:(id)target action:(SEL)action;
++ (UIBarButtonItem *)itemWithImage:(UIImage *)image edgeInsets:(UIEdgeInsets)edgeInsets bounds:(CGRect)frame higlightedImage:(UIImage *)higlightedImage alignment:(UIControlContentHorizontalAlignment)alignment target:(id)target action:(SEL)action;
 
 /**
  *  创建一个指定的UIBarButtonItem 内部封装一个UIButton 根据title设置button标题
  */
-+ (UIBarButtonItem *)itemWithTitle:(NSString *)title color:(UIColor *)color textSize:(CGFloat)textSize bounds:(CGRect)bound  target:(id)target action:(SEL)action;
++ (UIBarButtonItem *)itemWithTitle:(NSString *)title color:(UIColor *)color textSize:(CGFloat)textSize bounds:(CGRect)bound  alignment:(UIControlContentHorizontalAlignment)alignment target:(id)target action:(SEL)action;
 
 /**
  *  修改自己创建的导航栏按钮标题

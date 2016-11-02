@@ -30,7 +30,7 @@
     }];
     [self.view addSubview:scrllRound];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"转屏" color:[UIColor blackColor] textSize:16 bounds:CGRectMake(0, 0, 50, 40) target:self action:@selector(rightBarItemClicked)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"转屏" color:[UIColor blackColor] textSize:16 bounds: CGRectMake(0, 0, 50, 40) alignment:UIControlContentHorizontalAlignmentLeft target:self action:@selector(rightBarItemClicked)];
     
     [self initTitleBtnView];
     [self initSegmentView];

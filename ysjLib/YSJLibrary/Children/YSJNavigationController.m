@@ -16,7 +16,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     _interfaceOrientation = UIInterfaceOrientationMaskAllButUpsideDown;
-    _isAutorotate = YES;
+    _isAutorotate = NO;
 }
 
 #pragma mark - rotato method

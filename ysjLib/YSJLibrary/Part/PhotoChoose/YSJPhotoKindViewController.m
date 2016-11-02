@@ -16,17 +16,19 @@
 @interface YSJPhotoKindViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
-@property (nonatomic, copy) PicsSelectdOption option;
+@property (nonatomic, copy) PicsSelectdHandle handle;
 @property (nonatomic, assign) ShowType showType;
+@property (nonatomic, assign) SelectType selectType;
 
 @end
 
 @implementation YSJPhotoKindViewController
 
-- (instancetype)initWithShowType:(ShowType)showType Option:(PicsSelectdOption)option{
+- (instancetype)initWithShowType:(ShowType)showType selectType:(SelectType)selectType picsSelectHandle:(PicsSelectdHandle)handle{
     if (self = [super init]) {
         self.showType = showType;
-        self.option = option;
+        self.selectType = selectType;
+        self.handle = handle;
     }
     return self;
 }
@@ -36,7 +38,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"取消" color:self.view.tintColor textSize:RightBarItemTextSize bounds:CGRectMake(0, 0, 50, 35) target:self action:@selector(cancelBtnClicked)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"取消" color:self.view.tintColor textSize:RightBarItemTextSize bounds:CGRectMake(0, 0, 50, 35) alignment:UIControlContentHorizontalAlignmentRight target:self action:@selector(cancelBtnClicked)];
     self.navigationItem.title = @"选取照片";
     [self setBackBtnText:nil];
     
@@ -44,12 +46,18 @@
     tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.tableFooterView = [[UIView alloc]init];
     self.tableView = tableView;
     [self.view addSubview:tableView];
     
+    [self initPic];
+}
+
+- (void)initPic{
     // 列出所有相册智能相册
     PHFetchResult *albumsResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     
+    _dataArr = [NSMutableArray array];
     for (int i = 0; i < albumsResult.count; i++) {
         PHCollection *phCollection = albumsResult[i];
         if ([phCollection isKindOfClass:[PHAssetCollection class]]) {
@@ -100,7 +108,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     PHAssetCollection *assetCollection = self.dataArr[indexPath.row];
-    YSJPhotoChooseViewController *photoVC = [[YSJPhotoChooseViewController alloc]initWithAssetCollection:assetCollection showType:self.showType option:self.option];
+    YSJPhotoChooseViewController *photoVC = [[YSJPhotoChooseViewController alloc]initWithAssetCollection:assetCollection showType:self.showType selectType:self.selectType handle:self.handle];
     [self.navigationController pushViewController:photoVC animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
