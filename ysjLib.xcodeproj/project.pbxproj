@@ -53,6 +53,13 @@
 		4AFC12E41DC89B18003083CC /* YSJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12E31DC89B18003083CC /* YSJTextField.m */; };
 		4AFC12EA1DC98245003083CC /* Introduce_PhotoChoose in Resources */ = {isa = PBXBuildFile; fileRef = 4AFC12E81DC98245003083CC /* Introduce_PhotoChoose */; };
 		4AFC12EB1DC98245003083CC /* tick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AFC12E91DC98245003083CC /* tick@2x.png */; };
+		4AFC12FB1DC98834003083CC /* YSJCellCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12EE1DC98834003083CC /* YSJCellCenterModel.m */; };
+		4AFC12FC1DC98834003083CC /* YSJCellGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12F01DC98834003083CC /* YSJCellGroupModel.m */; };
+		4AFC12FD1DC98834003083CC /* YSJCellHeadingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12F21DC98834003083CC /* YSJCellHeadingModel.m */; };
+		4AFC12FE1DC98834003083CC /* YSJCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12F41DC98834003083CC /* YSJCellModel.m */; };
+		4AFC12FF1DC98834003083CC /* YSJCellTrailingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12F61DC98834003083CC /* YSJCellTrailingModel.m */; };
+		4AFC13001DC98834003083CC /* YSJTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12F81DC98834003083CC /* YSJTableView.m */; };
+		4AFC13011DC98834003083CC /* YSJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12FA1DC98834003083CC /* YSJTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +169,21 @@
 		4AFC12E31DC89B18003083CC /* YSJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJTextField.m; sourceTree = "<group>"; };
 		4AFC12E81DC98245003083CC /* Introduce_PhotoChoose */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Introduce_PhotoChoose; sourceTree = "<group>"; };
 		4AFC12E91DC98245003083CC /* tick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@2x.png"; sourceTree = "<group>"; };
+		4AFC12EC1DC98834003083CC /* YSJCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJCell.h; sourceTree = "<group>"; };
+		4AFC12ED1DC98834003083CC /* YSJCellCenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJCellCenterModel.h; sourceTree = "<group>"; };
+		4AFC12EE1DC98834003083CC /* YSJCellCenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJCellCenterModel.m; sourceTree = "<group>"; };
+		4AFC12EF1DC98834003083CC /* YSJCellGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJCellGroupModel.h; sourceTree = "<group>"; };
+		4AFC12F01DC98834003083CC /* YSJCellGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJCellGroupModel.m; sourceTree = "<group>"; };
+		4AFC12F11DC98834003083CC /* YSJCellHeadingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJCellHeadingModel.h; sourceTree = "<group>"; };
+		4AFC12F21DC98834003083CC /* YSJCellHeadingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJCellHeadingModel.m; sourceTree = "<group>"; };
+		4AFC12F31DC98834003083CC /* YSJCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJCellModel.h; sourceTree = "<group>"; };
+		4AFC12F41DC98834003083CC /* YSJCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJCellModel.m; sourceTree = "<group>"; };
+		4AFC12F51DC98834003083CC /* YSJCellTrailingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJCellTrailingModel.h; sourceTree = "<group>"; };
+		4AFC12F61DC98834003083CC /* YSJCellTrailingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJCellTrailingModel.m; sourceTree = "<group>"; };
+		4AFC12F71DC98834003083CC /* YSJTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJTableView.h; sourceTree = "<group>"; };
+		4AFC12F81DC98834003083CC /* YSJTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJTableView.m; sourceTree = "<group>"; };
+		4AFC12F91DC98834003083CC /* YSJTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJTableViewCell.h; sourceTree = "<group>"; };
+		4AFC12FA1DC98834003083CC /* YSJTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJTableViewCell.m; sourceTree = "<group>"; };
 		B3230D5F83D2075D1FAA090B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EE04E9ADEBCAD5F8A4DEB7D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +227,21 @@
 		4A0A72AE1D8953EE00DEB852 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				4AFC12EC1DC98834003083CC /* YSJCell.h */,
+				4AFC12ED1DC98834003083CC /* YSJCellCenterModel.h */,
+				4AFC12EE1DC98834003083CC /* YSJCellCenterModel.m */,
+				4AFC12EF1DC98834003083CC /* YSJCellGroupModel.h */,
+				4AFC12F01DC98834003083CC /* YSJCellGroupModel.m */,
+				4AFC12F11DC98834003083CC /* YSJCellHeadingModel.h */,
+				4AFC12F21DC98834003083CC /* YSJCellHeadingModel.m */,
+				4AFC12F31DC98834003083CC /* YSJCellModel.h */,
+				4AFC12F41DC98834003083CC /* YSJCellModel.m */,
+				4AFC12F51DC98834003083CC /* YSJCellTrailingModel.h */,
+				4AFC12F61DC98834003083CC /* YSJCellTrailingModel.m */,
+				4AFC12F71DC98834003083CC /* YSJTableView.h */,
+				4AFC12F81DC98834003083CC /* YSJTableView.m */,
+				4AFC12F91DC98834003083CC /* YSJTableViewCell.h */,
+				4AFC12FA1DC98834003083CC /* YSJTableViewCell.m */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -604,17 +641,23 @@
 			files = (
 				4A0F2BBC1D66F197007C9B9D /* FMDBHelper.m in Sources */,
 				4A0F2B9D1D66F114007C9B9D /* NSObject+YSJ.m in Sources */,
+				4AFC13011DC98834003083CC /* YSJTableViewCell.m in Sources */,
 				4A69BC1B1D587A9400572D00 /* ScreenDirectionViewController.m in Sources */,
+				4AFC13001DC98834003083CC /* YSJTableView.m in Sources */,
+				4AFC12FC1DC98834003083CC /* YSJCellGroupModel.m in Sources */,
 				4A0F2BB01D66F14E007C9B9D /* YSJNavigationController.m in Sources */,
 				4A69BC181D58798E00572D00 /* TableViewCellModel.m in Sources */,
+				4AFC12FE1DC98834003083CC /* YSJCellModel.m in Sources */,
 				4A0F2B9A1D66F114007C9B9D /* NSDate+YSJ.m in Sources */,
 				4A0F2BC41D66F1C7007C9B9D /* YSJLoadingView.m in Sources */,
 				4AE1A39C1D260D5800EC8D86 /* ChildViewController.m in Sources */,
 				4AE1A39F1D26397200EC8D86 /* ViewController2.m in Sources */,
 				4A0F2BD21D66F2D5007C9B9D /* YSJPhotoCell.m in Sources */,
 				4A0A72AC1D89503000DEB852 /* SettingViewController.m in Sources */,
+				4AFC12FB1DC98834003083CC /* YSJCellCenterModel.m in Sources */,
 				4AE109751C11258800E35E3C /* ysjLib.xcdatamodeld in Sources */,
 				4A0F2BBE1D66F197007C9B9D /* YSJConfig.m in Sources */,
+				4AFC12FD1DC98834003083CC /* YSJCellHeadingModel.m in Sources */,
 				4AC2277D1D6C40E20085D7CF /* YSJPhotoKindViewController.m in Sources */,
 				4A0F2BB41D66F14E007C9B9D /* YSJWebService.m in Sources */,
 				4A0F2BA11D66F114007C9B9D /* UIView+YSJ.m in Sources */,
@@ -624,6 +667,7 @@
 				4A0F2B9C1D66F114007C9B9D /* NSObject+XWAdd.m in Sources */,
 				4A0F2B9F1D66F114007C9B9D /* UIBarButtonItem+YSJ.m in Sources */,
 				4A0F2BD11D66F2D5007C9B9D /* YSJPhotoAlbumCell.m in Sources */,
+				4AFC12FF1DC98834003083CC /* YSJCellTrailingModel.m in Sources */,
 				4A0F2BAF1D66F14E007C9B9D /* YSJAlertView.m in Sources */,
 				4A0F2BB11D66F14E007C9B9D /* YSJTabBarController.m in Sources */,
 				4AE1096F1C11258800E35E3C /* ViewController.m in Sources */,
