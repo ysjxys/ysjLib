@@ -124,6 +124,14 @@
     _childView = childView;
     [self.view addSubview:childView];
     
+    UIView *grendChildView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 140, 120)];
+    grendChildView.backgroundColor = [UIColor redColor];
+    grendChildView.tag = 2;
+    [childView addSubview:grendChildView];
+    
+    UIView *view = [self.view viewWithTag:2];
+    NSLog(@"%@",view);
+    
 //    WeakSelf(self);
 //    [weakself testFMDB];
 }
