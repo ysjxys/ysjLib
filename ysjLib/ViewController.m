@@ -90,12 +90,18 @@
     textLabel.adjustsFontSizeToFitWidth = YES;//frame不变，改变字体大小
     NSLog(@"%@",textLabel.font);
     
-    YSJLabel *ysjLabel = [[YSJLabel alloc]initWithFrame:CGRectMake(265, 350, 50, 100)];
+//    YSJLabel *ysjLabel = [[YSJLabel alloc]initWithFrame:CGRectMake(265, 350, 50, 100)];
+    YSJLabel *ysjLabel = [[YSJLabel alloc]initWithFrame:CGRectMake(60, 350, 200, 50)];
     ysjLabel.backgroundColor = [UIColor lightGrayColor];
     ysjLabel.numberOfLines = 0;
     ysjLabel.verticalAlignment = VerticalAlignmentTop;
-    ysjLabel.text = @"xxxxxxxx";
+//    ysjLabel.text = @"xxxxxxxx";
+    ysjLabel.text = content;
     [self.view addSubview:ysjLabel];
+    
+    CGSize size = [content sizeWithFont:ysjLabel.font maxSize:CGSizeMake(200, 1000)];
+    ysjLabel.size = size;
+    NSLog(@"%lf     %lf", size.height, size.width);
     
 //    [self testWebService];
 //    [self testDownloadWebService];
