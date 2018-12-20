@@ -7,6 +7,7 @@
 //
 
 #import "UIView+YSJ.h"
+#import "Masonry.h"
 
 @implementation UIView (YSJ)
 /**
@@ -164,4 +165,120 @@
     frame.size = size;
     self.frame = frame;
 }
+
++ (UIView *)generateLineViewWith:(UIColor *)color for:(UIView *)fatherView {
+    UIView *lineView = [[UIView alloc]init];
+    lineView.backgroundColor = color;
+    [fatherView addSubview:lineView];
+    return lineView;
+}
+
+/**
+ *  设定粗细与颜色，为View添加顶部线条
+ */
+- (void)addTopLineWithThick:(CGFloat)thick andColor:(UIColor *)color {
+    UIView *lineView = [UIView generateLineViewWith:color for:self];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self);
+        make.width.equalTo(self);
+        make.centerX.equalTo(self);
+        make.height.mas_equalTo(thick);
+    }];
+}
+
+/**
+ *  设定颜色与默认粗细（CGFloat 0.5），为View添加顶部线条
+ */
+- (void)addTopLineWithColor:(UIColor *)color {
+    [self addTopLineWithThick:0.5 andColor:color];
+}
+
+/**
+ *  设定默认颜色（lightGrey Color） 与默认粗细（CGFloat 0.5），为View添加顶部线条
+ */
+- (void)addTopLine {
+    [self addTopLineWithColor:[UIColor lightGrayColor]];
+}
+
+/**
+ *  设定粗细与颜色，为View添加顶部线条
+ */
+- (void)addBottomLineWithThick:(CGFloat)thick andColor:(UIColor *)color {
+    UIView *lineView = [UIView generateLineViewWith:color for:self];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self);
+        make.width.equalTo(self);
+        make.centerX.equalTo(self);
+        make.height.mas_equalTo(thick);
+    }];
+}
+
+/**
+ *  设定颜色与默认粗细（CGFloat 0.5），为View添加顶部线条
+ */
+- (void)addBottomLineWithColor:(UIColor *)color {
+    [self addBottomLineWithThick:0.5 andColor:color];
+}
+
+/**
+ *  设定默认颜色（lightGrey Color） 与默认粗细（CGFloat 0.5），为View添加顶部线条
+ */
+- (void)addBottomLine {
+    [self addBottomLineWithColor:[UIColor lightGrayColor]];
+}
+
+/**
+ *  设定粗细与颜色，为View添加左侧线条
+ */
+- (void)addLeftLineWithThick:(CGFloat)thick andColor:(UIColor *)color {
+    UIView *lineView = [UIView generateLineViewWith:color for:self];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self);
+        make.left.equalTo(self);
+        make.top.equalTo(self);
+        make.width.mas_equalTo(thick);
+    }];
+}
+
+/**
+ *  设定颜色与默认粗细（CGFloat 0.5），为View添加左侧线条
+ */
+- (void)addLeftLineWithColor:(UIColor *)color {
+    [self addLeftLineWithThick:0.5 andColor:color];
+}
+
+/**
+ *  设定默认颜色（lightGrey Color） 与默认粗细（CGFloat 0.5），为View添加左侧线条
+ */
+- (void)addLeftLine {
+    [self addLeftLineWithColor:[UIColor lightGrayColor]];
+}
+
+/**
+ *  设定粗细与颜色，为View添加右侧线条
+ */
+- (void)addRightLineWithThick:(CGFloat)thick andColor:(UIColor *)color {
+    UIView *lineView = [UIView generateLineViewWith:color for:self];
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self);
+        make.right.equalTo(self);
+        make.top.equalTo(self);
+        make.width.mas_equalTo(thick);
+    }];
+}
+
+/**
+ *  设定颜色与默认粗细（CGFloat 0.5），为View添加右侧线条
+ */
+- (void)addRightLineWithColor:(UIColor *)color {
+    [self addRightLineWithThick:0.5 andColor:color];
+}
+
+/**
+ *  设定默认颜色（lightGrey Color） 与默认粗细（CGFloat 0.5），为View添加右侧线条
+ */
+- (void)addRightLine {
+    [self addRightLineWithColor:[UIColor lightGrayColor]];
+}
+
 @end

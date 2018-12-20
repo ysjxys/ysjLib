@@ -25,7 +25,7 @@
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-StatusBarHeight-NavigationBarHeight-TabBarHeight) style:UITableViewStylePlain];
+    UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-StatusBarHeight-HeightNavBar-TabBarHeight) style:UITableViewStylePlain];
     table.tableFooterView = [[UIView alloc]init];
     table.delegate = self;
     table.dataSource = self;

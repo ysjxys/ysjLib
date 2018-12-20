@@ -59,6 +59,19 @@
 		4AFC12FF1DC98834003083CC /* YSJCellTrailingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12F61DC98834003083CC /* YSJCellTrailingModel.m */; };
 		4AFC13001DC98834003083CC /* YSJTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12F81DC98834003083CC /* YSJTableView.m */; };
 		4AFC13011DC98834003083CC /* YSJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFC12FA1DC98834003083CC /* YSJTableViewCell.m */; };
+		7E6D9F0620848DDC0059C213 /* UIColor+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6D9F0520848DDC0059C213 /* UIColor+YSJ.m */; };
+		7E93D0FA20F4526F00C913FE /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E93D0F920F4526F00C913FE /* Common.m */; };
+		7E93D0FD20F480D000C913FE /* UIDevice+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E93D0FC20F480D000C913FE /* UIDevice+YSJ.m */; };
+		7E93D10020F495D700C913FE /* UIFont+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E93D0FF20F495D700C913FE /* UIFont+YSJ.m */; };
+		7EC05BFA205FA9AA00232392 /* TestInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC05BF9205FA9AA00232392 /* TestInterface.m */; };
+		7EC05BFD205FAD7600232392 /* ChildInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC05BFC205FAD7600232392 /* ChildInterface.m */; };
+		7EC1D4DE2086DE7400880BF1 /* UIViewController+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1D4DD2086DE7400880BF1 /* UIViewController+YSJ.m */; };
+		7EC1D4E1208868DC00880BF1 /* UILabel+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1D4E0208868DC00880BF1 /* UILabel+YSJ.m */; };
+		7EC1D4E42088733600880BF1 /* NSData+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1D4E32088733600880BF1 /* NSData+YSJ.m */; };
+		7EC1D4E72088771C00880BF1 /* NSDictionary+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1D4E62088771C00880BF1 /* NSDictionary+YSJ.m */; };
+		7EC1D4EA2088853200880BF1 /* NSArray+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1D4E92088853200880BF1 /* NSArray+YSJ.m */; };
+		7EC1D4ED20888BB800880BF1 /* UIButton+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1D4EC20888BB800880BF1 /* UIButton+YSJ.m */; };
+		7ECD0ECF2058FEAF00D943BD /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0ECE2058FEAF00D943BD /* TestView.m */; };
 		D95A0284441111BA0B9DA550 /* libPods-ysjLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B53D2C0EA6E260742C78BFB /* libPods-ysjLib.a */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +197,32 @@
 		4AFC12F91DC98834003083CC /* YSJTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJTableViewCell.h; sourceTree = "<group>"; };
 		4AFC12FA1DC98834003083CC /* YSJTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJTableViewCell.m; sourceTree = "<group>"; };
 		4F57B8FD309940FD1DF84F5B /* Pods-ysjLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ysjLib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ysjLib/Pods-ysjLib.debug.xcconfig"; sourceTree = "<group>"; };
+		7E6D9F0420848DDC0059C213 /* UIColor+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+YSJ.h"; sourceTree = "<group>"; };
+		7E6D9F0520848DDC0059C213 /* UIColor+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YSJ.m"; sourceTree = "<group>"; };
+		7E93D0F820F4526F00C913FE /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		7E93D0F920F4526F00C913FE /* Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		7E93D0FB20F480D000C913FE /* UIDevice+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+YSJ.h"; sourceTree = "<group>"; };
+		7E93D0FC20F480D000C913FE /* UIDevice+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+YSJ.m"; sourceTree = "<group>"; };
+		7E93D0FE20F495D700C913FE /* UIFont+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+YSJ.h"; sourceTree = "<group>"; };
+		7E93D0FF20F495D700C913FE /* UIFont+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+YSJ.m"; sourceTree = "<group>"; };
+		7EC05BF8205FA9AA00232392 /* TestInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestInterface.h; sourceTree = "<group>"; };
+		7EC05BF9205FA9AA00232392 /* TestInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestInterface.m; sourceTree = "<group>"; };
+		7EC05BFB205FAD7600232392 /* ChildInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildInterface.h; sourceTree = "<group>"; };
+		7EC05BFC205FAD7600232392 /* ChildInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildInterface.m; sourceTree = "<group>"; };
+		7EC1D4DC2086DE7400880BF1 /* UIViewController+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YSJ.h"; sourceTree = "<group>"; };
+		7EC1D4DD2086DE7400880BF1 /* UIViewController+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YSJ.m"; sourceTree = "<group>"; };
+		7EC1D4DF208868DC00880BF1 /* UILabel+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+YSJ.h"; sourceTree = "<group>"; };
+		7EC1D4E0208868DC00880BF1 /* UILabel+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YSJ.m"; sourceTree = "<group>"; };
+		7EC1D4E22088733600880BF1 /* NSData+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+YSJ.h"; sourceTree = "<group>"; };
+		7EC1D4E32088733600880BF1 /* NSData+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+YSJ.m"; sourceTree = "<group>"; };
+		7EC1D4E52088771C00880BF1 /* NSDictionary+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YSJ.h"; sourceTree = "<group>"; };
+		7EC1D4E62088771C00880BF1 /* NSDictionary+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YSJ.m"; sourceTree = "<group>"; };
+		7EC1D4E82088853200880BF1 /* NSArray+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+YSJ.h"; sourceTree = "<group>"; };
+		7EC1D4E92088853200880BF1 /* NSArray+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YSJ.m"; sourceTree = "<group>"; };
+		7EC1D4EB20888BB800880BF1 /* UIButton+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+YSJ.h"; sourceTree = "<group>"; };
+		7EC1D4EC20888BB800880BF1 /* UIButton+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YSJ.m"; sourceTree = "<group>"; };
+		7ECD0ECD2058FEAF00D943BD /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		7ECD0ECE2058FEAF00D943BD /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		8B53D2C0EA6E260742C78BFB /* libPods-ysjLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ysjLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF5BBBB187FC0322B353D37 /* Pods-ysjLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ysjLib.release.xcconfig"; path = "Pods/Target Support Files/Pods-ysjLib/Pods-ysjLib.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,22 +299,40 @@
 		4A0F2B891D66F114007C9B9D /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				7EC1D4E22088733600880BF1 /* NSData+YSJ.h */,
+				7EC1D4E32088733600880BF1 /* NSData+YSJ.m */,
 				4A0F2B8A1D66F114007C9B9D /* NSDate+YSJ.h */,
 				4A0F2B8B1D66F114007C9B9D /* NSDate+YSJ.m */,
+				4A0F2B921D66F114007C9B9D /* NSString+YSJ.h */,
+				4A0F2B931D66F114007C9B9D /* NSString+YSJ.m */,
+				7EC1D4E52088771C00880BF1 /* NSDictionary+YSJ.h */,
+				7EC1D4E62088771C00880BF1 /* NSDictionary+YSJ.m */,
+				7EC1D4E82088853200880BF1 /* NSArray+YSJ.h */,
+				7EC1D4E92088853200880BF1 /* NSArray+YSJ.m */,
 				4A0F2B8C1D66F114007C9B9D /* NSNumber+YSJ.h */,
 				4A0F2B8D1D66F114007C9B9D /* NSNumber+YSJ.m */,
 				4A0F2B8E1D66F114007C9B9D /* NSObject+XWAdd.h */,
 				4A0F2B8F1D66F114007C9B9D /* NSObject+XWAdd.m */,
 				4A0F2B901D66F114007C9B9D /* NSObject+YSJ.h */,
 				4A0F2B911D66F114007C9B9D /* NSObject+YSJ.m */,
-				4A0F2B921D66F114007C9B9D /* NSString+YSJ.h */,
-				4A0F2B931D66F114007C9B9D /* NSString+YSJ.m */,
+				7E6D9F0420848DDC0059C213 /* UIColor+YSJ.h */,
+				7E6D9F0520848DDC0059C213 /* UIColor+YSJ.m */,
 				4A0F2B941D66F114007C9B9D /* UIBarButtonItem+YSJ.h */,
 				4A0F2B951D66F114007C9B9D /* UIBarButtonItem+YSJ.m */,
 				4A0F2B961D66F114007C9B9D /* UIImage+YSJ.h */,
 				4A0F2B971D66F114007C9B9D /* UIImage+YSJ.m */,
 				4A0F2B981D66F114007C9B9D /* UIView+YSJ.h */,
 				4A0F2B991D66F114007C9B9D /* UIView+YSJ.m */,
+				7EC1D4DC2086DE7400880BF1 /* UIViewController+YSJ.h */,
+				7EC1D4DD2086DE7400880BF1 /* UIViewController+YSJ.m */,
+				7EC1D4DF208868DC00880BF1 /* UILabel+YSJ.h */,
+				7EC1D4E0208868DC00880BF1 /* UILabel+YSJ.m */,
+				7EC1D4EB20888BB800880BF1 /* UIButton+YSJ.h */,
+				7EC1D4EC20888BB800880BF1 /* UIButton+YSJ.m */,
+				7E93D0FB20F480D000C913FE /* UIDevice+YSJ.h */,
+				7E93D0FC20F480D000C913FE /* UIDevice+YSJ.m */,
+				7E93D0FE20F495D700C913FE /* UIFont+YSJ.h */,
+				7E93D0FF20F495D700C913FE /* UIFont+YSJ.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -312,6 +369,8 @@
 				4A0F2BB91D66F197007C9B9D /* YSJCommonTools.m */,
 				4A0F2BBA1D66F197007C9B9D /* YSJConfig.h */,
 				4A0F2BBB1D66F197007C9B9D /* YSJConfig.m */,
+				7E93D0F820F4526F00C913FE /* Common.h */,
+				7E93D0F920F4526F00C913FE /* Common.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -393,6 +452,12 @@
 				4A0F2B881D66F0E6007C9B9D /* YSJLibrary */,
 				4AE1096A1C11258800E35E3C /* AppDelegate.h */,
 				4AE1096B1C11258800E35E3C /* AppDelegate.m */,
+				7ECD0ECD2058FEAF00D943BD /* TestView.h */,
+				7ECD0ECE2058FEAF00D943BD /* TestView.m */,
+				7EC05BF8205FA9AA00232392 /* TestInterface.h */,
+				7EC05BF9205FA9AA00232392 /* TestInterface.m */,
+				7EC05BFB205FAD7600232392 /* ChildInterface.h */,
+				7EC05BFC205FAD7600232392 /* ChildInterface.m */,
 				4AE1096D1C11258800E35E3C /* ViewController.h */,
 				4AE1096E1C11258800E35E3C /* ViewController.m */,
 				4AE1A39D1D26397200EC8D86 /* ViewController2.h */,
@@ -466,7 +531,6 @@
 				4AE109601C11258800E35E3C /* Sources */,
 				4AE109611C11258800E35E3C /* Frameworks */,
 				4AE109621C11258800E35E3C /* Resources */,
-				9F336CC86C7859D14C4EE398 /* [CP] Embed Pods Frameworks */,
 				39002C81A877252DF0B7D661 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -593,28 +657,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ysjLib/Pods-ysjLib-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ysjLib/Pods-ysjLib-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F336CC86C7859D14C4EE398 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ysjLib/Pods-ysjLib-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B982A85DB39A4733477A725A /* [CP] Check Pods Manifest.lock */ = {
@@ -623,13 +675,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ysjLib-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -646,27 +701,37 @@
 				4AFC13001DC98834003083CC /* YSJTableView.m in Sources */,
 				4AFC12FC1DC98834003083CC /* YSJCellGroupModel.m in Sources */,
 				4A0F2BB01D66F14E007C9B9D /* YSJNavigationController.m in Sources */,
+				7ECD0ECF2058FEAF00D943BD /* TestView.m in Sources */,
 				4A69BC181D58798E00572D00 /* TableViewCellModel.m in Sources */,
+				7EC1D4E1208868DC00880BF1 /* UILabel+YSJ.m in Sources */,
 				4AFC12FE1DC98834003083CC /* YSJCellModel.m in Sources */,
 				4A0F2B9A1D66F114007C9B9D /* NSDate+YSJ.m in Sources */,
 				4A0F2BC41D66F1C7007C9B9D /* YSJLoadingView.m in Sources */,
 				4AE1A39C1D260D5800EC8D86 /* ChildViewController.m in Sources */,
 				4AE1A39F1D26397200EC8D86 /* ViewController2.m in Sources */,
 				4A0F2BD21D66F2D5007C9B9D /* YSJPhotoCell.m in Sources */,
+				7EC1D4ED20888BB800880BF1 /* UIButton+YSJ.m in Sources */,
 				4A0A72AC1D89503000DEB852 /* SettingViewController.m in Sources */,
+				7EC1D4EA2088853200880BF1 /* NSArray+YSJ.m in Sources */,
 				4AFC12FB1DC98834003083CC /* YSJCellCenterModel.m in Sources */,
 				4AE109751C11258800E35E3C /* ysjLib.xcdatamodeld in Sources */,
 				4A0F2BBE1D66F197007C9B9D /* YSJConfig.m in Sources */,
+				7E93D0FA20F4526F00C913FE /* Common.m in Sources */,
 				4AFC12FD1DC98834003083CC /* YSJCellHeadingModel.m in Sources */,
+				7E93D0FD20F480D000C913FE /* UIDevice+YSJ.m in Sources */,
+				7EC1D4E72088771C00880BF1 /* NSDictionary+YSJ.m in Sources */,
 				4AC2277D1D6C40E20085D7CF /* YSJPhotoKindViewController.m in Sources */,
 				4A0F2BB41D66F14E007C9B9D /* YSJWebService.m in Sources */,
+				7E6D9F0620848DDC0059C213 /* UIColor+YSJ.m in Sources */,
 				4A0F2BA11D66F114007C9B9D /* UIView+YSJ.m in Sources */,
 				4AC227F61D83DFE50085D7CF /* YSJLabel.m in Sources */,
 				4A0F2B9B1D66F114007C9B9D /* NSNumber+YSJ.m in Sources */,
+				7E93D10020F495D700C913FE /* UIFont+YSJ.m in Sources */,
 				4A0F2BC51D66F1C7007C9B9D /* YSJScrollRoundView.m in Sources */,
 				4A0F2B9C1D66F114007C9B9D /* NSObject+XWAdd.m in Sources */,
 				4A0F2B9F1D66F114007C9B9D /* UIBarButtonItem+YSJ.m in Sources */,
 				4A0F2BD11D66F2D5007C9B9D /* YSJPhotoAlbumCell.m in Sources */,
+				7EC1D4E42088733600880BF1 /* NSData+YSJ.m in Sources */,
 				4AFC12FF1DC98834003083CC /* YSJCellTrailingModel.m in Sources */,
 				4A0F2BAF1D66F14E007C9B9D /* YSJAlertView.m in Sources */,
 				4A0F2BB11D66F14E007C9B9D /* YSJTabBarController.m in Sources */,
@@ -680,7 +745,10 @@
 				4AE1096C1C11258800E35E3C /* AppDelegate.m in Sources */,
 				4A0F2B9E1D66F114007C9B9D /* NSString+YSJ.m in Sources */,
 				4AE109691C11258800E35E3C /* main.m in Sources */,
+				7EC1D4DE2086DE7400880BF1 /* UIViewController+YSJ.m in Sources */,
 				4A0F2BB31D66F14E007C9B9D /* YSJViewController.m in Sources */,
+				7EC05BFD205FAD7600232392 /* ChildInterface.m in Sources */,
+				7EC05BFA205FA9AA00232392 /* TestInterface.m in Sources */,
 				4A0F2BBD1D66F197007C9B9D /* YSJCommonTools.m in Sources */,
 				4A0F2BD01D66F2D5007C9B9D /* YSJPHAsset.m in Sources */,
 			);

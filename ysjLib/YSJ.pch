@@ -25,12 +25,16 @@
 //弱引用
 #define WeakSelf(type)  __weak typeof(type) weak##type = type;
 
+
+//navigationBar高度
+#define HeightNavBar 44
+
+
 //tabbar默认高度
 #define TabBarHeight 49
 //顶部状态栏高度
 #define StatusBarHeight 20
-//navigationBar高度
-#define NavigationBarHeight 44
+
 //颜色设置
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 //自定义输出

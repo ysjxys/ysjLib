@@ -42,7 +42,7 @@
     self.navigationItem.title = @"选取照片";
     [self setBackBtnText:nil];
     
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-StatusBarHeight-NavigationBarHeight) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-StatusBarHeight-HeightNavBar) style:UITableViewStylePlain];
     tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
     tableView.delegate = self;
     tableView.dataSource = self;

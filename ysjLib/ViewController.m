@@ -21,8 +21,16 @@
 #import <Photos/Photos.h>
 #import "YSJCommonTools.h"
 #import "YSJLabel.h"
+#import "TestView.h"
+#import "ChildInterface.h"
+#import "UIColor+YSJ.h"
+#import "UIViewController+YSJ.h"
+#import "NSDictionary+YSJ.h"
+#import "NSData+YSJ.h"
+#import "Common.h"
+#import "UIButton+YSJ.h"
 
-@interface ViewController ()<UIAlertViewDelegate>
+@interface ViewController ()<UIAlertViewDelegate, TestViewDelegate>
 @property (nonatomic, strong) YSJAlertView *ysjAlert;
 //@property (nonatomic, strong) ChildViewController *childVC;
 @property (nonatomic, strong) UIView *childView;
@@ -70,16 +78,15 @@
     UIImage *img = [UIImage imageNamed:@"sh6524_1709"];
     img = [img circleImage];
     UIImageView *imgView = [[UIImageView alloc]initWithImage:img];
-    imgView.backgroundColor = [UIColor lightGrayColor];
+    imgView.backgroundColor = [UIColor fromHex:@"FF1493"];
     imgView.frame = CGRectMake(60, 120, 200, 200);
     [self.view addSubview:imgView];
     
     UILabel *textLabel = [[UILabel alloc]initWithFrame:CGRectMake(60, 350, 200, 100)];
-    textLabel.backgroundColor = [UIColor lightGrayColor];
     textLabel.numberOfLines = 0;
     [self.view addSubview: textLabel];
     textLabel.font = [UIFont systemFontOfSize:17];
-    NSString *content = @"我就是试试到底这个动态调整边框有用没有啊，没有想搞一个大新闻，你们不要听风就是雨，将来新闻报道出了偏差你们是要负责任的，识得唔识得呀。";
+    NSString *content = @"我就是试试到底这个动态调整边框有用没有啊，没有想搞一个大新闻，你们不要听风就是雨，将来新闻报道出了偏差你们是要负责任的，识得唔识得呀。2";
     textLabel.text = content;
     
     NSLog(@"%lf",textLabel.height);
@@ -98,6 +105,7 @@
 //    ysjLabel.text = @"xxxxxxxx";
     ysjLabel.text = content;
     [self.view addSubview:ysjLabel];
+    
     
     CGSize size = [content sizeWithFont:ysjLabel.font maxSize:CGSizeMake(200, 1000)];
     ysjLabel.size = size;
@@ -131,7 +139,7 @@
     [self.view addSubview:childView];
     
     UIView *grendChildView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 140, 120)];
-    grendChildView.backgroundColor = [UIColor redColor];
+//    grendChildView.backgroundColor = [UIColor fromHex:@"9397a1"];
     grendChildView.tag = 2;
     [childView addSubview:grendChildView];
     
@@ -140,6 +148,88 @@
     
 //    WeakSelf(self);
 //    [weakself testFMDB];
+    
+    TestView *testView = [[TestView alloc] init];
+    testView.delegate = self;
+    [testView doSomethingWithString1:@"呵呵" andString2:@"哈哈"];
+    
+    NSString *testNotf = @"testNotification";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(testNotification:) name:testNotf object:nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:testNotf object:nil userInfo:@{@"info1": @"我是info1"}];
+    
+    __weak __typeof(self)weakSelf = self;
+    
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:@2, @3, @6, @9, @8, @1, nil];
+    for (int i = 0; i < array.count; i++) {
+        for (int j = i; j < array.count; j++) {
+            if (array[i] > array[j]) {
+                NSNumber *temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+    NSLog(@"%@", array);
+    
+    ChildInterface *testInterface = [[ChildInterface alloc]init];
+    NSLog(@"testInterface.name: %@, testInterface.age: %@, testInterface.address: %@", testInterface.name, testInterface.age, testInterface.address);
+    
+    UIFont *font = [UIFont systemFontOfSize:15];
+    NSLog(@"font.pointSize: %f", font.pointSize);
+    
+    
+    UIView *theView = [[UIView alloc] init];
+    theView.frame = CGRectMake(50, 400, 300, 50);
+    theView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:theView];
+    [theView addTopLineWithThick:2 andColor:[UIColor yellowColor]];
+    [theView addBottomLineWithThick:0.5 andColor:[UIColor lightGrayColor]];
+    [theView addLeftLine];
+    [theView addRightLine];
+    
+    self.title = @"fuck";
+    
+    UIButton *fuckBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, 520, 40, 40)];
+    fuckBtn.backgroundColor = [UIColor lightGrayColor];
+    [fuckBtn setTitle:@"fuckBtn" forState:UIControlStateNormal];
+    [fuckBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [fuckBtn addTarget:self action:@selector(fuckBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [fuckBtn setEnlargeEdgeWithTop:0 left:50 bottom:0 right:200];
+    [self.view addSubview:fuckBtn];
+    
+    NSDictionary *dic1 = @{@"one": @"1", @"two": @"2", @"three": @"3"};
+    NSLog(@"%@", dic1.toData);
+    NSLog(@"%@", dic1.toData.toDictionary);
+    NSDictionary *dic2 = [NSDictionary fullCopyWithCopyedDictionary:dic1];
+    NSLog(@"dic1:%@, dic2:%@", dic1, dic2);
+    
+    CSDirection dirDown = CSDirectionDown;
+    CSDirection dirUp = CSDirectionUp;
+    CSDirection dirLeft = CSDirectionLeft;
+    CSDirection dirRight = CSDirectionRight;
+    
+    CSConnectionState con1 = CSConnectionStateConnected;
+    CSConnectionState con2 = CSConnectionStateConnecting;
+    CSConnectionState con3 = CSConnectionStateDisconnected;
+    
+    NSLog(@"dirDown:%lu dirUp:%lu dirLeft:%lu dirRight:%lu ", dirDown, dirUp|dirDown, dirLeft, dirRight);
+    
+    NSLog(@"con1:%lu con2:%lu con3:%lu ", con1, con2, con3);
+    
+    NSLog(@"%lf", [Common uiScale:100]);
+}
+
+- (void)fuckBtnClick {
+    NSLog(@"currentVC.title:%@", [UIViewController getCurrentVC].title);
+}
+
+- (void)testNotification:(NSDictionary *)userInfo {
+    NSLog(@"userInfo: %@", userInfo);
+}
+
+- (void)testDelegate:(NSString *)str1 withStr2:(NSString *)str2 {
+    NSLog(@"str1: %@ str2: %@", str1, str2);
 }
 
 - (void)testNet{

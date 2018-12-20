@@ -23,7 +23,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self initData];
-    YSJTableView *ysjTV = [YSJTableView viewWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-StatusBarHeight-NavigationBarHeight-TabBarHeight) TableViewStyle:UITableViewStyleGrouped cellIdentifier:@"SettingViewControllerCell" rowActionArr:_rowActionArr dataArr:_dataArr];
+    YSJTableView *ysjTV = [YSJTableView viewWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-StatusBarHeight-HeightNavBar-TabBarHeight) TableViewStyle:UITableViewStyleGrouped cellIdentifier:@"SettingViewControllerCell" rowActionArr:_rowActionArr dataArr:_dataArr];
     [self.view addSubview:ysjTV];
 }
 

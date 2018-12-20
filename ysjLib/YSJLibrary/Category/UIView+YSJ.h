@@ -101,12 +101,73 @@
 - (void)setOrigin:(CGPoint)origin;
 
 /**
- *  返回原点值
+ *  返回尺寸
  */
 - (CGSize)size;
 
 /**
- *  设置原点值
+ *  设置尺寸
  */
 - (void)setSize:(CGSize)size;
+
+/**
+ *  设定粗细与颜色，为View添加顶部线条
+ */
+- (void)addTopLineWithThick:(CGFloat)thick andColor:(UIColor *)color;
+
+/**
+ *  设定颜色与默认粗细（CGFloat 0.5），为View添加顶部线条
+ */
+- (void)addTopLineWithColor:(UIColor *)color;
+
+/**
+ *  设定默认颜色（lightGrey Color） 与默认粗细（CGFloat 0.5），为View添加顶部线条
+ */
+- (void)addTopLine;
+
+/**
+ *  设定粗细与颜色，为View添加顶部线条
+ */
+- (void)addBottomLineWithThick:(CGFloat)thick andColor:(UIColor *)color;
+
+/**
+ *  设定颜色与默认粗细（CGFloat 0.5），为View添加顶部线条
+ */
+- (void)addBottomLineWithColor:(UIColor *)color;
+
+/**
+ *  设定默认颜色（lightGrey Color） 与默认粗细（CGFloat 0.5），为View添加顶部线条
+ */
+- (void)addBottomLine;
+
+/**
+ *  设定粗细与颜色，为View添加左侧线条
+ */
+- (void)addLeftLineWithThick:(CGFloat)thick andColor:(UIColor *)color;
+
+/**
+ *  设定颜色与默认粗细（CGFloat 0.5），为View添加左侧线条
+ */
+- (void)addLeftLineWithColor:(UIColor *)color;
+
+/**
+ *  设定默认颜色（lightGrey Color） 与默认粗细（CGFloat 0.5），为View添加左侧线条
+ */
+- (void)addLeftLine;
+
+/**
+ *  设定粗细与颜色，为View添加右侧线条
+ */
+- (void)addRightLineWithThick:(CGFloat)thick andColor:(UIColor *)color;
+
+/**
+ *  设定颜色与默认粗细（CGFloat 0.5），为View添加右侧线条
+ */
+- (void)addRightLineWithColor:(UIColor *)color;
+
+/**
+ *  设定默认颜色（lightGrey Color） 与默认粗细（CGFloat 0.5），为View添加右侧线条
+ */
+- (void)addRightLine;
+
 @end

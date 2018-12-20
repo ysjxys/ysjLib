@@ -44,7 +44,7 @@
     UIButton *titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     titleBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     CGFloat distance = 7.0f;
-    titleBtn.frame = CGRectMake(distance, distance, NavigationBarHeight-distance*2, NavigationBarHeight-distance*2);
+    titleBtn.frame = CGRectMake(distance, distance, HeightNavBar-distance*2, HeightNavBar-distance*2);
     [titleBtn setImage:[UIImage imageNamed:@"0首页-3景点门票.jpg"] forState:UIControlStateNormal];
     [titleBtn setImage:[UIImage imageNamed:@"0首页-2旅游攻略.jpg"] forState:UIControlStateSelected];
     [titleBtn setImage:[UIImage imageNamed:@"0首页-1杭州风貌.jpg"] forState:UIControlStateHighlighted];

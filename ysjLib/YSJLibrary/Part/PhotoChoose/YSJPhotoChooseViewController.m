@@ -63,7 +63,7 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-StatusBarHeight-NavigationBarHeight) collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-StatusBarHeight-HeightNavBar) collectionViewLayout:layout];
     collectionView.contentInset = UIEdgeInsetsMake(0, 0, 40, 0);
     collectionView.backgroundColor = [UIColor whiteColor];
     [collectionView registerClass:[YSJPhotoCell class] forCellWithReuseIdentifier:PhotoCollectionCellIdentifier];
@@ -83,7 +83,7 @@
 }
 
 - (void)initDetaiViews{
-    UIView *backDetailView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-StatusBarHeight-NavigationBarHeight)];
+    UIView *backDetailView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-StatusBarHeight-HeightNavBar)];
     backDetailView.backgroundColor = [UIColor whiteColor];
     self.backDetailView = backDetailView;
     backDetailView.alpha = 0;
@@ -99,7 +99,7 @@
     self.imgDetailView = imgView;
     
     CGFloat bottomDetailViewHeight = 40;
-    UIView *bottomDetailView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.bottom-StatusBarHeight-NavigationBarHeight-bottomDetailViewHeight, self.view.width, bottomDetailViewHeight)];
+    UIView *bottomDetailView = [[UIView alloc]initWithFrame:CGRectMake(0, self.view.bottom-StatusBarHeight-HeightNavBar-bottomDetailViewHeight, self.view.width, bottomDetailViewHeight)];
     bottomDetailView.backgroundColor = [UIColor whiteColor];
     bottomDetailView.alpha = 0;
     self.bottomDetailView = bottomDetailView;
