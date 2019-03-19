@@ -25,7 +25,7 @@
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-StatusBarHeight-HeightNavBar-TabBarHeight) style:UITableViewStylePlain];
+    UITableView *table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height*2) style:UITableViewStylePlain];
     table.tableFooterView = [[UIView alloc]init];
     table.delegate = self;
     table.dataSource = self;
@@ -82,7 +82,13 @@
         [self changeInterfaceOrientation:UIInterfaceOrientationMaskAllButUpsideDown];
     };
     
-    self.dataArr = @[model0,model1,model2,model3,model4,model5,model6,model7];
+    TableViewCellModel *model8 = [[TableViewCellModel alloc] init];
+    model8.title = @"Situable";
+    model8.option = ^{
+        [self changeDeviceOrientationSituable];
+    };
+    
+    self.dataArr = @[model0,model1,model2,model3,model4,model5,model6,model7,model8];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

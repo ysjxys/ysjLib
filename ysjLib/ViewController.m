@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "NSDate+YSJ.h"
 #import "NSString+YSJ.h"
-#import "YSJAlertView.h"
 #import "UIImage+YSJ.h"
 #import "UIBarButtonItem+YSJ.h"
 #import "YSJWebService.h"
@@ -29,9 +28,9 @@
 #import "NSData+YSJ.h"
 #import "Common.h"
 #import "UIButton+YSJ.h"
+#import "YSJTextField.h"
 
-@interface ViewController ()<UIAlertViewDelegate, TestViewDelegate>
-@property (nonatomic, strong) YSJAlertView *ysjAlert;
+@interface ViewController ()<UIAlertViewDelegate, TestViewDelegate, UITextFieldDelegate>
 //@property (nonatomic, strong) ChildViewController *childVC;
 @property (nonatomic, strong) UIView *childView;
 @end
@@ -58,6 +57,7 @@
     NSLog(@"%f,%f",self.view.frame.size.height,self.view.frame.size.width);
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 20)];
     label.backgroundColor = [UIColor redColor];
+    label.font = [UIFont systemFontOfSize:15 weight:UIFontWeightBlack];
     [self.view addSubview:label];
     
 //    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 528, 320, 20)];
@@ -82,6 +82,12 @@
     imgView.frame = CGRectMake(60, 120, 200, 200);
     [self.view addSubview:imgView];
     
+    YSJTextField *ysjTF = [[YSJTextField alloc] initWithFrame:CGRectMake(270, 120, 80, 30)];
+    ysjTF.backgroundColor = [UIColor lightGrayColor];
+    ysjTF.delegate = self;
+//    ysjTF.text = @"222333";
+    [self.view addSubview:ysjTF];
+    
     UILabel *textLabel = [[UILabel alloc]initWithFrame:CGRectMake(60, 350, 200, 100)];
     textLabel.numberOfLines = 0;
     [self.view addSubview: textLabel];
@@ -102,7 +108,7 @@
     ysjLabel.backgroundColor = [UIColor lightGrayColor];
     ysjLabel.numberOfLines = 0;
     ysjLabel.verticalAlignment = VerticalAlignmentTop;
-//    ysjLabel.text = @"xxxxxxxx";
+    ysjLabel.text = @"xxxxxxxx";
     ysjLabel.text = content;
     [self.view addSubview:ysjLabel];
     
@@ -113,7 +119,7 @@
     
 //    [self testWebService];
 //    [self testDownloadWebService];
-    [self testFMDB];
+//    [self testFMDB];
 //    [self testArrSort];
 //    [self testDicSort];
     self.myBlock = ^(int num, NSString *name){
@@ -218,6 +224,20 @@
     NSLog(@"con1:%lu con2:%lu con3:%lu ", con1, con2, con3);
     
     NSLog(@"%lf", [Common uiScale:100]);
+}
+
+//把“插入”和“删除”都解释成了“替换”。插入就是用文本替换空字符串，删除就是用空字符串替换文本。即 将要生成的文本长度 = 原始文本长度 - 选中文本长度 + 输入文本长度
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([string isEqualToString:@""] && range.length > 0) {
+        // 删除字符肯定是安全的
+        return YES;
+    }
+    
+    if (textField.text.length - range.length + string.length > 3) {
+        NSLog(@"超出最大长度");
+        return NO;
+    }
+    return YES;
 }
 
 - (void)fuckBtnClick {
@@ -429,7 +449,7 @@
 }
 
 - (void)btnClicked:(UIButton *)btn{
-    [self.ysjAlert show];
+    
 }
 
 - (void)btn2Clicked:(UIButton *)btn{
@@ -442,20 +462,6 @@
     [self.childView addSubview:childVC.view];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    YSJAlertView *ysjAlert = (YSJAlertView *)alertView;
-    ysjAlert.selectOption(buttonIndex);
-}
-
-- (YSJAlertView *)ysjAlert{
-    if (!_ysjAlert) {
-        _ysjAlert = [[YSJAlertView alloc]initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"btn", nil];
-        _ysjAlert.selectOption = ^(NSInteger selectIndex){
-            NSLog(@"%ld",(long)selectIndex);
-        };
-    }
-    return _ysjAlert;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -8,6 +8,10 @@
 
 #import "YSJTextField.h"
 
+@interface YSJTextField()
+
+@end
+
 @implementation YSJTextField
 //设置默认文字的显示区域
 - (CGRect)placeholderRectForBounds:(CGRect)bounds{

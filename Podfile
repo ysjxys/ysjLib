@@ -9,4 +9,6 @@ pod 'MJRefresh', '~> 3.1'
 pod 'FMDB', '~> 2.6.2'
 pod 'FSCalendar', '~> 2.3'
 pod 'Masonry', '~> 1.1'
+pod 'ReactiveObjC'
+
 end

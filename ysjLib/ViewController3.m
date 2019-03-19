@@ -10,6 +10,8 @@
 #import "YSJScrollRoundView.h"
 #import "UIBarButtonItem+YSJ.h"
 #import "ScreenDirectionViewController.h"
+#import "DamoModel.h"
+#import "DamoTableView.h"
 
 @interface ViewController3 ()
 @property (nonatomic, strong) UISegmentedControl *segmentColor;
@@ -32,8 +34,26 @@
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"转屏" color:[UIColor blackColor] textSize:16 bounds: CGRectMake(0, 0, 50, 40) alignment:UIControlContentHorizontalAlignmentLeft target:self action:@selector(rightBarItemClicked)];
     
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTitle:@"tableView" color:[UIColor blackColor] textSize:16 bounds:CGRectMake(0, 0, 80, 40) alignment:UIControlContentHorizontalAlignmentRight target:self action:@selector(leftBarItemClicked)];
+    
     [self initTitleBtnView];
     [self initSegmentView];
+}
+
+- (void)leftBarItemClicked {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 8; i++) {
+        DamoModel *model = [[DamoModel alloc] init];
+        model.title = [NSString stringWithFormat:@"标题%d", i];
+        model.detail = [NSString stringWithFormat:@"内容%d", i];
+        [array addObject:model];
+    }
+    
+    DamoTableView *damoTableView = [[DamoTableView alloc] initWithDataList:array];
+    damoTableView.selectBlock = ^(NSInteger index, DamoModel *damoModel) {
+        NSLog(@"index:%ld  damoModel.title:%@   damoModel.detail:%@", (long)index, damoModel.title, damoModel.detail);
+    };
+    [[UIApplication sharedApplication].delegate.window addSubview:damoTableView];
 }
 
 - (void)rightBarItemClicked{

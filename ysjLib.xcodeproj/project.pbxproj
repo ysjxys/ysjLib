@@ -16,10 +16,8 @@
 		4A0F2B9F1D66F114007C9B9D /* UIBarButtonItem+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2B951D66F114007C9B9D /* UIBarButtonItem+YSJ.m */; };
 		4A0F2BA01D66F114007C9B9D /* UIImage+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2B971D66F114007C9B9D /* UIImage+YSJ.m */; };
 		4A0F2BA11D66F114007C9B9D /* UIView+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2B991D66F114007C9B9D /* UIView+YSJ.m */; };
-		4A0F2BAF1D66F14E007C9B9D /* YSJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2BA41D66F14E007C9B9D /* YSJAlertView.m */; };
 		4A0F2BB01D66F14E007C9B9D /* YSJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2BA61D66F14E007C9B9D /* YSJNavigationController.m */; };
 		4A0F2BB11D66F14E007C9B9D /* YSJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2BA81D66F14E007C9B9D /* YSJTabBarController.m */; };
-		4A0F2BB21D66F14E007C9B9D /* YSJTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2BAA1D66F14E007C9B9D /* YSJTableViewDataSource.m */; };
 		4A0F2BB31D66F14E007C9B9D /* YSJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2BAC1D66F14E007C9B9D /* YSJViewController.m */; };
 		4A0F2BB41D66F14E007C9B9D /* YSJWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2BAE1D66F14E007C9B9D /* YSJWebService.m */; };
 		4A0F2BBC1D66F197007C9B9D /* FMDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F2BB71D66F197007C9B9D /* FMDBHelper.m */; };
@@ -72,6 +70,10 @@
 		7EC1D4EA2088853200880BF1 /* NSArray+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1D4E92088853200880BF1 /* NSArray+YSJ.m */; };
 		7EC1D4ED20888BB800880BF1 /* UIButton+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC1D4EC20888BB800880BF1 /* UIButton+YSJ.m */; };
 		7ECD0ECF2058FEAF00D943BD /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECD0ECE2058FEAF00D943BD /* TestView.m */; };
+		7EFF313E223F37D200FC6386 /* DamoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF313D223F37D200FC6386 /* DamoTableView.m */; };
+		7EFF3141223F390900FC6386 /* DamoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF3140223F390900FC6386 /* DamoModel.m */; };
+		7EFF3144223F91A200FC6386 /* YSJNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF3143223F91A200FC6386 /* YSJNavigationView.m */; };
+		7EFF31472240979A00FC6386 /* TestNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF31462240979A00FC6386 /* TestNavigationViewController.m */; };
 		D95A0284441111BA0B9DA550 /* libPods-ysjLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B53D2C0EA6E260742C78BFB /* libPods-ysjLib.a */; };
 /* End PBXBuildFile section */
 
@@ -111,14 +113,10 @@
 		4A0F2B971D66F114007C9B9D /* UIImage+YSJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YSJ.m"; sourceTree = "<group>"; };
 		4A0F2B981D66F114007C9B9D /* UIView+YSJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YSJ.h"; sourceTree = "<group>"; };
 		4A0F2B991D66F114007C9B9D /* UIView+YSJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YSJ.m"; sourceTree = "<group>"; };
-		4A0F2BA31D66F14E007C9B9D /* YSJAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJAlertView.h; sourceTree = "<group>"; };
-		4A0F2BA41D66F14E007C9B9D /* YSJAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJAlertView.m; sourceTree = "<group>"; };
 		4A0F2BA51D66F14E007C9B9D /* YSJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJNavigationController.h; sourceTree = "<group>"; };
 		4A0F2BA61D66F14E007C9B9D /* YSJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJNavigationController.m; sourceTree = "<group>"; };
 		4A0F2BA71D66F14E007C9B9D /* YSJTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJTabBarController.h; sourceTree = "<group>"; };
 		4A0F2BA81D66F14E007C9B9D /* YSJTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJTabBarController.m; sourceTree = "<group>"; };
-		4A0F2BA91D66F14E007C9B9D /* YSJTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJTableViewDataSource.h; sourceTree = "<group>"; };
-		4A0F2BAA1D66F14E007C9B9D /* YSJTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJTableViewDataSource.m; sourceTree = "<group>"; };
 		4A0F2BAB1D66F14E007C9B9D /* YSJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJViewController.h; sourceTree = "<group>"; };
 		4A0F2BAC1D66F14E007C9B9D /* YSJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSJViewController.m; sourceTree = "<group>"; };
 		4A0F2BAD1D66F14E007C9B9D /* YSJWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSJWebService.h; sourceTree = "<group>"; };
@@ -223,6 +221,14 @@
 		7EC1D4EC20888BB800880BF1 /* UIButton+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YSJ.m"; sourceTree = "<group>"; };
 		7ECD0ECD2058FEAF00D943BD /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		7ECD0ECE2058FEAF00D943BD /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
+		7EFF313C223F37D200FC6386 /* DamoTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DamoTableView.h; sourceTree = "<group>"; };
+		7EFF313D223F37D200FC6386 /* DamoTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DamoTableView.m; sourceTree = "<group>"; };
+		7EFF313F223F390900FC6386 /* DamoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DamoModel.h; sourceTree = "<group>"; };
+		7EFF3140223F390900FC6386 /* DamoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DamoModel.m; sourceTree = "<group>"; };
+		7EFF3142223F91A200FC6386 /* YSJNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSJNavigationView.h; sourceTree = "<group>"; };
+		7EFF3143223F91A200FC6386 /* YSJNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSJNavigationView.m; sourceTree = "<group>"; };
+		7EFF31452240979A00FC6386 /* TestNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNavigationViewController.h; sourceTree = "<group>"; };
+		7EFF31462240979A00FC6386 /* TestNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNavigationViewController.m; sourceTree = "<group>"; };
 		8B53D2C0EA6E260742C78BFB /* libPods-ysjLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ysjLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF5BBBB187FC0322B353D37 /* Pods-ysjLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ysjLib.release.xcconfig"; path = "Pods/Target Support Files/Pods-ysjLib/Pods-ysjLib.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -340,22 +346,24 @@
 		4A0F2BA21D66F14E007C9B9D /* Children */ = {
 			isa = PBXGroup;
 			children = (
-				4A0F2BA31D66F14E007C9B9D /* YSJAlertView.h */,
-				4A0F2BA41D66F14E007C9B9D /* YSJAlertView.m */,
 				4A0F2BA51D66F14E007C9B9D /* YSJNavigationController.h */,
 				4A0F2BA61D66F14E007C9B9D /* YSJNavigationController.m */,
 				4A0F2BA71D66F14E007C9B9D /* YSJTabBarController.h */,
 				4A0F2BA81D66F14E007C9B9D /* YSJTabBarController.m */,
-				4A0F2BA91D66F14E007C9B9D /* YSJTableViewDataSource.h */,
-				4A0F2BAA1D66F14E007C9B9D /* YSJTableViewDataSource.m */,
 				4A0F2BAB1D66F14E007C9B9D /* YSJViewController.h */,
 				4A0F2BAC1D66F14E007C9B9D /* YSJViewController.m */,
+				7EFF3142223F91A200FC6386 /* YSJNavigationView.h */,
+				7EFF3143223F91A200FC6386 /* YSJNavigationView.m */,
 				4A0F2BAD1D66F14E007C9B9D /* YSJWebService.h */,
 				4A0F2BAE1D66F14E007C9B9D /* YSJWebService.m */,
 				4AC227F41D83DFE50085D7CF /* YSJLabel.h */,
 				4AC227F51D83DFE50085D7CF /* YSJLabel.m */,
 				4AFC12E21DC89B18003083CC /* YSJTextField.h */,
 				4AFC12E31DC89B18003083CC /* YSJTextField.m */,
+				7EFF313C223F37D200FC6386 /* DamoTableView.h */,
+				7EFF313D223F37D200FC6386 /* DamoTableView.m */,
+				7EFF313F223F390900FC6386 /* DamoModel.h */,
+				7EFF3140223F390900FC6386 /* DamoModel.m */,
 			);
 			path = Children;
 			sourceTree = "<group>";
@@ -466,6 +474,8 @@
 				4A6486C41D3CCBF000347641 /* ViewController3.m */,
 				4A69BC191D587A9400572D00 /* ScreenDirectionViewController.h */,
 				4A69BC1A1D587A9400572D00 /* ScreenDirectionViewController.m */,
+				7EFF31452240979A00FC6386 /* TestNavigationViewController.h */,
+				7EFF31462240979A00FC6386 /* TestNavigationViewController.m */,
 				4A0A72AA1D89503000DEB852 /* SettingViewController.h */,
 				4A0A72AB1D89503000DEB852 /* SettingViewController.m */,
 				4A69BC161D58798E00572D00 /* TableViewCellModel.h */,
@@ -657,7 +667,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ysjLib/Pods-ysjLib-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ysjLib/Pods-ysjLib-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -666,7 +676,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ysjLib/Pods-ysjLib-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ysjLib/Pods-ysjLib-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B982A85DB39A4733477A725A /* [CP] Check Pods Manifest.lock */ = {
@@ -695,6 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A0F2BBC1D66F197007C9B9D /* FMDBHelper.m in Sources */,
+				7EFF31472240979A00FC6386 /* TestNavigationViewController.m in Sources */,
 				4A0F2B9D1D66F114007C9B9D /* NSObject+YSJ.m in Sources */,
 				4AFC13011DC98834003083CC /* YSJTableViewCell.m in Sources */,
 				4A69BC1B1D587A9400572D00 /* ScreenDirectionViewController.m in Sources */,
@@ -715,6 +726,7 @@
 				7EC1D4EA2088853200880BF1 /* NSArray+YSJ.m in Sources */,
 				4AFC12FB1DC98834003083CC /* YSJCellCenterModel.m in Sources */,
 				4AE109751C11258800E35E3C /* ysjLib.xcdatamodeld in Sources */,
+				7EFF3144223F91A200FC6386 /* YSJNavigationView.m in Sources */,
 				4A0F2BBE1D66F197007C9B9D /* YSJConfig.m in Sources */,
 				7E93D0FA20F4526F00C913FE /* Common.m in Sources */,
 				4AFC12FD1DC98834003083CC /* YSJCellHeadingModel.m in Sources */,
@@ -722,6 +734,7 @@
 				7EC1D4E72088771C00880BF1 /* NSDictionary+YSJ.m in Sources */,
 				4AC2277D1D6C40E20085D7CF /* YSJPhotoKindViewController.m in Sources */,
 				4A0F2BB41D66F14E007C9B9D /* YSJWebService.m in Sources */,
+				7EFF3141223F390900FC6386 /* DamoModel.m in Sources */,
 				7E6D9F0620848DDC0059C213 /* UIColor+YSJ.m in Sources */,
 				4A0F2BA11D66F114007C9B9D /* UIView+YSJ.m in Sources */,
 				4AC227F61D83DFE50085D7CF /* YSJLabel.m in Sources */,
@@ -730,13 +743,12 @@
 				4A0F2BC51D66F1C7007C9B9D /* YSJScrollRoundView.m in Sources */,
 				4A0F2B9C1D66F114007C9B9D /* NSObject+XWAdd.m in Sources */,
 				4A0F2B9F1D66F114007C9B9D /* UIBarButtonItem+YSJ.m in Sources */,
+				7EFF313E223F37D200FC6386 /* DamoTableView.m in Sources */,
 				4A0F2BD11D66F2D5007C9B9D /* YSJPhotoAlbumCell.m in Sources */,
 				7EC1D4E42088733600880BF1 /* NSData+YSJ.m in Sources */,
 				4AFC12FF1DC98834003083CC /* YSJCellTrailingModel.m in Sources */,
-				4A0F2BAF1D66F14E007C9B9D /* YSJAlertView.m in Sources */,
 				4A0F2BB11D66F14E007C9B9D /* YSJTabBarController.m in Sources */,
 				4AE1096F1C11258800E35E3C /* ViewController.m in Sources */,
-				4A0F2BB21D66F14E007C9B9D /* YSJTableViewDataSource.m in Sources */,
 				4A6486C51D3CCBF000347641 /* ViewController3.m in Sources */,
 				4AFC12E41DC89B18003083CC /* YSJTextField.m in Sources */,
 				4AC2277C1D6C40E20085D7CF /* YSJPhotoChooseViewController.m in Sources */,
