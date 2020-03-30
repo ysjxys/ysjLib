@@ -25,4 +25,19 @@
     return copyDic;
 }
 
++ (NSDictionary *)toDictionary:(NSString *)JSONString{
+    if (JSONString==nil) {
+        return nil;
+    }
+    NSData *jsonData = [JSONString dataUsingEncoding: NSUTF8StringEncoding];
+    
+    NSError *err;
+    NSDictionary *dic =  [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
 @end

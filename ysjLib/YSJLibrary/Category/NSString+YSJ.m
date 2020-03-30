@@ -139,4 +139,23 @@
     NSData *data =[str dataUsingEncoding:NSUTF8StringEncoding];
     return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 }
+
++ (NSString *)toJSONString:(id)dataObject {
+    if (!dataObject) {
+        return nil;
+    }
+    if ([NSJSONSerialization isValidJSONObject:dataObject])
+    {
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataObject options:NSJSONWritingPrettyPrinted error:&error];
+        if(error) {
+            NSLog(@"解析为json失败：%@",error);
+            return nil;
+        }
+        NSString *json =[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        return json;
+    }
+    return nil;
+}
+
 @end

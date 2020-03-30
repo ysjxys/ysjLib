@@ -41,6 +41,13 @@
     view.clipsToBounds = YES;
     [self.view addSubview:view];
     
+    UIButton *exchangeBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, 500, 80, 40)];
+    [exchangeBtn setTitle:@"exchangeBtn" forState:UIControlStateNormal];
+    [exchangeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [exchangeBtn setBackgroundColor:[UIColor lightGrayColor]];
+    [self.view addSubview:exchangeBtn];
+    [exchangeBtn addTarget:self action:@selector(exchangeBtnSelect) forControlEvents:UIControlEventTouchUpInside];
+    
     
     ChildViewController *childVC = [[ChildViewController alloc]init];
     self.childVC = childVC;
@@ -72,7 +79,43 @@
 
 - (void)willMoveToParentViewController:(UIViewController *)parent{
     NSLog(@"willMoveToParentViewController");
-}                                                                                                                                                                                                                              
+}
+
+- (void)exchangeBtnSelect {
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSLog(@"documentPath:%@", documentPath);
+    
+    [self showAllFileWithPath:documentPath];
+}
+
+- (void)showAllFileWithPath:(NSString *)path {
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    BOOL isDir = NO;
+    [fileManager fileExistsAtPath:path isDirectory:&isDir];
+    
+    if (isDir) {
+        NSString *subPath = nil;
+        NSArray *fileNameArr = [fileManager contentsOfDirectoryAtPath:path error:nil];
+        for (NSString *str in fileNameArr) {
+            subPath = [path stringByAppendingPathComponent:str];
+            BOOL issubDir = NO;
+            [fileManager fileExistsAtPath:subPath isDirectory:&issubDir];
+            [self showAllFileWithPath:subPath];
+        }
+    }else{
+        NSString *oriName = [path lastPathComponent];
+        oriName = [oriName stringByReplacingOccurrencesOfString:@"\\" withString:@"_"];
+        oriName = [oriName stringByReplacingOccurrencesOfString:@"／" withString:@"_"];
+        oriName = [oriName stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
+        oriName = [oriName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        oriName = [oriName stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
+        oriName = [oriName stringByReplacingOccurrencesOfString:@"(" withString:@"_"];
+        oriName = [oriName stringByReplacingOccurrencesOfString:@"" withString:@""];
+        
+        NSString *newPath = [[path stringByDeletingLastPathComponent] stringByAppendingPathComponent:oriName];
+        [fileManager moveItemAtPath:path toPath:newPath error:nil];
+    }
+}
 
 - (void)btnClicked{
 //    该方法，执行完以后，fromViewController指代的视图控制器的View将从界面消失；

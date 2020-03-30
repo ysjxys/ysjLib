@@ -78,4 +78,7 @@
  */
 - (NSDictionary *)base64DecodeAndTransform:(NSString *)base64String;
 
+//将对象（如dictionary）转化为json
++ (NSString *) toJSONString:(id)dataObject;
+
 @end

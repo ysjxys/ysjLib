@@ -11,6 +11,10 @@ typedef void (^ClickedOption)(UIButton *btn);
 @interface YSJViewController : UIViewController
 
 #pragma mark - NavigationBar method
+
+- (void)keyBoardShow;
+- (void)keyBoardhidden;
+
 /**
  *  任意控制器的提示title
  */

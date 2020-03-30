@@ -74,6 +74,7 @@
 		7EFF3141223F390900FC6386 /* DamoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF3140223F390900FC6386 /* DamoModel.m */; };
 		7EFF3144223F91A200FC6386 /* YSJNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF3143223F91A200FC6386 /* YSJNavigationView.m */; };
 		7EFF31472240979A00FC6386 /* TestNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF31462240979A00FC6386 /* TestNavigationViewController.m */; };
+		9AA5DAB72276ED9700421D60 /* UIResponder+YSJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5DAB62276ED9300421D60 /* UIResponder+YSJ.m */; };
 		D95A0284441111BA0B9DA550 /* libPods-ysjLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B53D2C0EA6E260742C78BFB /* libPods-ysjLib.a */; };
 /* End PBXBuildFile section */
 
@@ -230,6 +231,8 @@
 		7EFF31452240979A00FC6386 /* TestNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestNavigationViewController.h; sourceTree = "<group>"; };
 		7EFF31462240979A00FC6386 /* TestNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestNavigationViewController.m; sourceTree = "<group>"; };
 		8B53D2C0EA6E260742C78BFB /* libPods-ysjLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ysjLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA5DAB52276ED9300421D60 /* UIResponder+YSJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+YSJ.h"; sourceTree = "<group>"; };
+		9AA5DAB62276ED9300421D60 /* UIResponder+YSJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+YSJ.m"; sourceTree = "<group>"; };
 		DBF5BBBB187FC0322B353D37 /* Pods-ysjLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ysjLib.release.xcconfig"; path = "Pods/Target Support Files/Pods-ysjLib/Pods-ysjLib.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -339,6 +342,8 @@
 				7E93D0FC20F480D000C913FE /* UIDevice+YSJ.m */,
 				7E93D0FE20F495D700C913FE /* UIFont+YSJ.h */,
 				7E93D0FF20F495D700C913FE /* UIFont+YSJ.m */,
+				9AA5DAB52276ED9300421D60 /* UIResponder+YSJ.h */,
+				9AA5DAB62276ED9300421D60 /* UIResponder+YSJ.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -599,7 +604,7 @@
 				TargetAttributes = {
 					4AE109631C11258800E35E3C = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 2EUZ5J663F;
+						DevelopmentTeam = 3XY474KY37;
 					};
 					4AE1097F1C11258800E35E3C = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -616,6 +621,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -741,6 +747,7 @@
 				4A0F2B9B1D66F114007C9B9D /* NSNumber+YSJ.m in Sources */,
 				7E93D10020F495D700C913FE /* UIFont+YSJ.m in Sources */,
 				4A0F2BC51D66F1C7007C9B9D /* YSJScrollRoundView.m in Sources */,
+				9AA5DAB72276ED9700421D60 /* UIResponder+YSJ.m in Sources */,
 				4A0F2B9C1D66F114007C9B9D /* NSObject+XWAdd.m in Sources */,
 				4A0F2B9F1D66F114007C9B9D /* UIBarButtonItem+YSJ.m in Sources */,
 				7EFF313E223F37D200FC6386 /* DamoTableView.m in Sources */,
@@ -907,6 +914,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3XY474KY37;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ysjLib/YSJ.pch";
 				INFOPLIST_FILE = ysjLib/Info.plist;
@@ -923,6 +931,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 3XY474KY37;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ysjLib/YSJ.pch";
 				INFOPLIST_FILE = ysjLib/Info.plist;

@@ -11,6 +11,7 @@
 #import "YSJNavigationController.h"
 #import "UIImage+YSJ.h"
 #import "YSJTabBarController.h"
+#import "ReactiveObjC.h"
 
 @interface YSJViewController ()
 @property (nonatomic, copy) ClickedOption titleBtnClickOption;
@@ -31,6 +32,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     _selfNavigationController = self.navigationController;
     _selfTabBarController  =self.tabBarController;
+    
+    [self initNot];
 //    YSJNavigationController *nav = (YSJNavigationController *)self.navigationController;
 //    
 //    //设置标题颜色与字体
@@ -49,6 +52,33 @@
 //    
 //    //设置statusbar style
 //    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
+- (void)initNot {
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillShowNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        NSDictionary *userInfo = [x userInfo];
+        NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+        CGRect keyboardRect = [aValue CGRectValue];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@(keyboardRect.size.height) forKey:@"UserDefaultKeyBoardHeight"];
+        
+        [self keyBoardShow];
+    }];
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillHideNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self keyBoardhidden];
+    }];
+}
+
+- (void)keyBoardShow {
+    
+}
+
+- (void)keyBoardhidden {
+    
 }
 
 #pragma mark - NavigationBar method

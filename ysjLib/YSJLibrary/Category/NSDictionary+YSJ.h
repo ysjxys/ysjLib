@@ -21,4 +21,7 @@
  */
 + (NSDictionary *)fullCopyWithCopyedDictionary:(NSDictionary *)copyedDictionary;
 
+//将json字符串转化为dictionary
++ (NSDictionary *) toDictionary:(NSString *)JSONString;
+
 @end

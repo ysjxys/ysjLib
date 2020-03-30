@@ -25,4 +25,19 @@
     return copyArr;
 }
 
++ (NSArray *) toArray:(NSString *)JSONString  {
+    if (JSONString==nil) {
+        return nil;
+    }
+    NSData *jsonData = [JSONString dataUsingEncoding: NSUTF8StringEncoding];
+    
+    NSError *err;
+    NSArray *array =  [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return array;
+}
+
 @end

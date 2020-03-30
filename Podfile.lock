@@ -32,7 +32,6 @@ DEPENDENCIES:
   - FMDB (~> 2.6.2)
   - FSCalendar (~> 2.3)
   - Masonry (~> 1.1)
-  - Masonry (~> 1.1.0)
   - MBProgressHUD (~> 0.9)
   - MJRefresh (~> 3.1)
   - Reachability (~> 3.1.1)
@@ -62,6 +61,6 @@ SPEC CHECKSUMS:
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: e606f531b4a9e37b320a5c28ada688bb3e2351b9
+PODFILE CHECKSUM: 3c526165322f7f1aa8ecee3c357ac7316955ff50
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.6.1

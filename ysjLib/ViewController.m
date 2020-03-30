@@ -198,7 +198,16 @@
     
     UIButton *fuckBtn = [[UIButton alloc] initWithFrame:CGRectMake(50, 520, 40, 40)];
     fuckBtn.backgroundColor = [UIColor lightGrayColor];
+    fuckBtn.selected = YES;
+    fuckBtn.enabled = NO;
+    // selectNO enableNO   disable
+    // selectNO enableYES   normal
+    // selectYES enableYES   select
+    // selectYES enableNO   normal
+    
     [fuckBtn setTitle:@"fuckBtn" forState:UIControlStateNormal];
+    [fuckBtn setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
+    [fuckBtn setTitleColor:[UIColor yellowColor] forState:UIControlStateSelected];
     [fuckBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [fuckBtn addTarget:self action:@selector(fuckBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [fuckBtn setEnlargeEdgeWithTop:0 left:50 bottom:0 right:200];
